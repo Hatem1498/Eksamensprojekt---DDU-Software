@@ -33,7 +33,8 @@
                 }
                     else if(button.id == "QR-2"){
                         if(window.confirm(`Decoded QR: ${result} \n Press "OK" to send data to the server`)){
-                            ws_2.send(cheese, result);
+                            let data = `${result},${cheese}`;
+                            ws_2.send(data);
                         }
                     }
                 })
