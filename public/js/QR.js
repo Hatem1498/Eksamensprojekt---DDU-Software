@@ -1,13 +1,3 @@
-function scan(element){
-    qrScanner.scanImage(element)
-    .then(result => console.log(result))
-    .catch(function(error){
-        console.log(error || 'No QR code found.')
-        scan(element);
-    });
-}
-
-
 //Video elements
 const video = document.getElementById("video");
 const video_2 = document.getElementById("video-2");
@@ -25,7 +15,6 @@ video.autoplay = true;
 video_2.style.left = String( (screen.width-(screen.width*0.9))/2 ) + "px";
 video_2.autoplay = true;
 
-
 /* Setting up the constraint */
 var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
 var constraints = {
@@ -40,5 +29,7 @@ navigator.mediaDevices.getUserMedia(constraints)
     video.srcObject = stream;
 });
 
-
-
+window.onload = function() {
+    button_2.click();
+    button_2.click();
+}
