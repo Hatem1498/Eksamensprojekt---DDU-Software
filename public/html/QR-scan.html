@@ -41,11 +41,13 @@
             
             scan.start(); */
             
-            qrScanner.scanImage(video)
-            .then(result => console.log(result))
-            .catch(error => console.log(error || 'No QR code found.'));
-
-            if(button_2.className == "on"){
+            while(button.className == "on"){
+                qrScanner.scanImage(video)
+                .then(result => console.log(result))
+                .catch(error => console.log(error || 'No QR code found.'));
+            }
+            
+            while(button_2.className == "on"){
                 qrScanner.scanImage(video_2)
                 .then(result => console.log(result))
                 .catch(error => 
