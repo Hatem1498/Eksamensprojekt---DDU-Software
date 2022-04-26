@@ -25,9 +25,10 @@
                     element.srcObject.getTracks().forEach(function(track){track.stop()});
                 })
                 .catch(function(error){
-                console.log(error || 'No QR code found.')
+                console.log(error || 'No QR code found.');
+                console.log(button);
                 if(button.className == "on"){
-                scan(element);
+                scan(element, button);
                 }
             });
         }
