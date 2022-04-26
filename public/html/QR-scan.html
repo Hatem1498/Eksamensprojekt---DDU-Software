@@ -23,10 +23,10 @@
                 .then(function(result){  
                     console.log(result);
                     element.srcObject.getTracks().forEach(function(track){track.stop()});
+                    video.style.display = "none";
                 })
                 .catch(function(error){
                 console.log(error || 'No QR code found.');
-                console.log(button);
                 if(button.className == "on"){
                 scan(element, button);
                 }
