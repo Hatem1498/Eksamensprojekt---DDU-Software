@@ -30,9 +30,9 @@ navigator.mediaDevices.getUserMedia(constraints)
     video.srcObject = stream;
 });
 
-window.onload =  function(){
+/* window.onload =  function(){
     button_2.click();
     button_2.click();
-};
+}; */
 
 
