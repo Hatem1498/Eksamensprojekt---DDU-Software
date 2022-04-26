@@ -1,3 +1,4 @@
+const { default: QrScanner } = require("qr-scanner");
 
 
 //Video elements
@@ -41,10 +42,18 @@ button.addEventListener("click", event => {
     if(button.className == "off"){
         button.className = "on";
         video.style.display = "block";
+        navigator.mediaDevices.getUserMedia(constraints)
+        .then(function success(stream) {
+        video.srcObject = stream;
+        });
+        scan(video);
     }
     else{
         button.className = "off";
         video.style.display = "none";
+        video.srcObject.getTracks().forEach(function(track){
+            track.stop();
+        });
     }
 
 });
@@ -61,6 +70,7 @@ button_2.addEventListener("click", event => {
         .then(function success(stream) {
         video_2.srcObject = stream;
         });
+        scan(video_2);
     }
     else{
         button_2.className = "off";

@@ -11,35 +11,11 @@
         <script src="../js/navbar.js" defer></script>
         <link rel="stylesheet" href="../index.css">
         <link rel="stylesheet" href="../css/QR-scan.css">
-        <script src ="../js/QR.js" defer></script>
         <script type = "module" defer>
             const loc = location.origin.replace(/^http/, "ws");
             const HOST_2 = loc + "/data";
             const ws_2 = new WebSocket(HOST_2);
             import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
-
-            let p = document.getElementById("result");
-            
-            /* const scan_2 = new qrScanner(video_2, r => {
-                if(button_2.className == "on"){
-                console.log("scanning...");
-                console.log('scan_2 decode:', r)
-                let results = String(r + "," + window.value);
-                ws_2.send(results); 
-                scan_2.stop();
-                }
-            });
-            
-            const scan = new qrScanner(video, result => { 
-                console.log('scan_1 decode:', result)
-                let text = document.createTextNode("Scanning Successful!");
-                p.appendChild(text);
-                window.value = result;
-                scan_2.start();
-                scan.destroy();
-            });
-            
-            scan.start(); */
             
             function scan(element){
                 qrScanner.scanImage(element)
@@ -49,20 +25,8 @@
                     scan(element);
                 });
             }
-
-            if(button.className == "on"){
-                scan(video);
-
-            }
-
-            if(button.className == "on"){
-                scan(video_2);
-            }
-
-
-
         </script>
-        
+    <script src ="../js/QR.js" defer></script>
         
     </head>
 
