@@ -1,4 +1,11 @@
-
+function scan(element){
+    qrScanner.scanImage(element)
+    .then(result => console.log(result))
+    .catch(function(error){
+        console.log(error || 'No QR code found.')
+        scan(element);
+    });
+}
 
 
 //Video elements
