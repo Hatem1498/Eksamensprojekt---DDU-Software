@@ -16,8 +16,7 @@ function cheeseQR(event){
 
     const stringJson = JSON.stringify(dataJson);
 
-    window.open("http://api.qrserver.com/v1/create-qr-code/?data=" + stringJson +"&size=" + dataJson.image_size, "_blank");
-
+    window.open(`http://api.qrserver.com/v1/create-qr-code/?data=${dataJson}&size=${dataJson.image_size}`, "_blank");
 }
 
 function shelfQR(event){
