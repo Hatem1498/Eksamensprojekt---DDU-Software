@@ -57,8 +57,6 @@ button_2.addEventListener("click", event => {
     if(button_2.className == "off"){
         button_2.className = "on";
         video_2.style.display = "block";
-        video_2.style.width = "273.599px";
-        video_2.style.height = "486.396px";
         navigator.mediaDevices.getUserMedia(constraints)
         .then(function success(stream) {
         video_2.srcObject = stream;
