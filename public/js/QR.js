@@ -41,8 +41,8 @@ button_2.addEventListener("click", event => {
     if(button_2.className == "off"){
         button_2.className = "on";
         video_2.style.display = "block";
-        video_2.style.width = "20px";
-        video_2.style.height = "18px";
+        video_2.style.width = "273.599px";
+        video_2.style.height = "486.396px";
     }
     else{
         button_2.className = "off";
