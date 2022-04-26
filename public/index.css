@@ -1,0 +1,150 @@
+/* Roboto Regular 400 font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.navbar_title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.navbar_links {
+    height: 100%;
+}
+
+.navbar_links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar_links li {
+    list-style: none;
+    transition: background-color 0.5s;
+}
+.navbar_links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar_links li:hover {
+    background-color: #555;
+}
+
+.burgermenu_btn {
+    position: fixed;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.burgermenu_btn .bar {
+    height: 2px;
+    width: 100%;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.navbar_links .current{
+    background-color: #555;
+}
+
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    
+    .bar.bar1{
+        transform-origin: 0% 0%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .bar.bar2{
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .bar.bar3{
+        transform-origin: 0% 100%;
+        transition: transform 0.4s ease-in-out;
+    }
+
+    .bar.bar1.x{
+        transform: rotate(45deg);
+      
+    }
+
+    .bar.bar2.x{
+        transform: scaleY(0);
+    }
+
+    .bar.bar3.x{
+        transform: rotate(-45deg);
+       
+    }
+    .burgermenu_btn {
+        display: flex;
+    }
+
+    .navbar_links {
+        width: 100%;
+        transition: margin-left 1s, padding-left 1s, max-height 0.5s;
+        overflow: hidden;
+        margin-left: -100%;
+        padding-left: -100%;
+        max-height: 0;
+    }
+
+    .navbar_links ul {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+
+    .navbar_links ul li {
+        text-align: center;
+    }
+
+    .navbar_links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar_links.transition{
+        display: flex;
+    }
+    .navbar_links.active {
+        margin-left: 0%;
+        padding-left: 0%;
+        top: 100%;
+        max-height: 300px;
+    }    
+
+    
+    
+}

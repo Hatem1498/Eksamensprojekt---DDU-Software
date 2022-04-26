@@ -1,0 +1,9 @@
+
+input, label{
+    display: flex;
+    margin: 0.4rem 0;
+}
+
+.input_container{
+    margin: 1rem 0;
+}
