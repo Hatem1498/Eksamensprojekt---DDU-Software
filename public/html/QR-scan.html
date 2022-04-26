@@ -24,6 +24,10 @@
                     console.log(result);
                     element.srcObject.getTracks().forEach(function(track){track.stop()});
                     element.style.display = "none";
+                    if(window.confirm(`Decoded QR: ${result} \n Press "OK" to scan the shelf code`)){
+                        button_2.click();
+                    }
+
                 })
                 .catch(function(error){
                 console.log(error || 'No QR code found.');
