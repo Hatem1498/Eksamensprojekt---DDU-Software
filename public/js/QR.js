@@ -15,6 +15,7 @@ video.autoplay = true;
 video_2.style.left = String( (screen.width-(screen.width*0.9))/2 ) + "px";
 video_2.autoplay = true;
 
+
 /* Setting up the constraint */
 var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
 var constraints = {
@@ -29,7 +30,9 @@ navigator.mediaDevices.getUserMedia(constraints)
     video.srcObject = stream;
 });
 
-window.onload = function() {
+window.onload(function(){
     button_2.click();
     button_2.click();
-}
+})
+
+

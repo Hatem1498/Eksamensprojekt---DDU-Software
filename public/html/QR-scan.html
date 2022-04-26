@@ -18,6 +18,16 @@
             const ws_2 = new WebSocket(HOST_2);
             import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
 
+            function scan(element){
+                qrScanner.scanImage(element)
+                .then(result => console.log(result))
+                .catch(function(error){
+                console.log(error || 'No QR code found.')
+                scan(element);
+            });
+        }
+
+
         //When "Scan Ost QR" button is pressed the button class changes to on, if it was off and video is displayed.
         //If it was on, it is turned off. 
         button.addEventListener("click", event => {
