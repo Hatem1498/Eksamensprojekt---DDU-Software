@@ -19,8 +19,8 @@ module.exports = websocket_2;
 
 async function SortData(data){
     let values = data.split(",");
-    console.log(values);
     let shelf = values[0];
     let cheese = values[1];
+    console.log(cheese);
     insert(shelf, cheese);
 }
