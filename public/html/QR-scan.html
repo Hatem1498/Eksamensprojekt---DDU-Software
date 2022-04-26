@@ -24,8 +24,6 @@
                 if(button_2.className == "on"){
                 console.log("scanning...");
                 console.log('scan_2 decode:', r)
-                video_2.style.width = "90%";
-                video_2.style.height = "auto";
                 let results = String(r + "," + window.value);
                 ws_2.send(results); 
                 scan_2.stop();
