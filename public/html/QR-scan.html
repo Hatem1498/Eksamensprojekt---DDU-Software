@@ -18,7 +18,7 @@
             const ws_2 = new WebSocket(HOST_2);
             import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
 
-            function scan(element){
+            function scan(element, button){
                 qrScanner.scanImage(element)
                 .then(function(result){  
                     console.log(result);
@@ -26,7 +26,9 @@
                 })
                 .catch(function(error){
                 console.log(error || 'No QR code found.')
+                if(button.className == "on"){
                 scan(element);
+                }
             });
         }
 
@@ -41,7 +43,7 @@
             .then(function success(stream) {
             video.srcObject = stream;
             });
-            scan(video);
+            scan(video, button);
         }
         else{
             button.className = "off";
@@ -61,7 +63,7 @@
             .then(function success(stream) {
             video_2.srcObject = stream;
             });
-            scan(video_2);
+            scan(video_2, button_2);
         }
         else{
             button_2.className = "off";
