@@ -23,7 +23,7 @@
                 .then(function(result){  
                     console.log(result);
                     element.srcObject.getTracks().forEach(function(track){track.stop()});
-                    video.style.display = "none";
+                    element.style.display = "none";
                 })
                 .catch(function(error){
                 console.log(error || 'No QR code found.');
