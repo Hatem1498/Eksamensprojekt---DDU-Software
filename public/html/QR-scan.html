@@ -20,7 +20,7 @@
 
             let p = document.getElementById("result");
             
-            const scan_2 = new qrScanner(video_2, r => {
+            /* const scan_2 = new qrScanner(video_2, r => {
                 if(button_2.className == "on"){
                 console.log("scanning...");
                 console.log('scan_2 decode:', r)
@@ -39,8 +39,20 @@
                 scan.destroy();
             });
             
-            scan.start();
+            scan.start(); */
             
+            qrScanner.scanImage(video)
+            .then(result => console.log(result))
+            .catch(error => console.log(error || 'No QR code found.'));
+
+            if(button_2.className == "on"){
+                qrScanner.scanImage(video_2)
+                .then(result => console.log(result))
+                .catch(error => 
+                console.log(error || 'No QR code found.'));
+            }
+
+
 
         </script>
         

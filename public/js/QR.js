@@ -18,6 +18,22 @@ video_2.style.left = String( (screen.width-(screen.width*0.9))/2 ) + "px";
 video_2.autoplay = true;
 
 
+/* Setting up the constraint */
+var facingMode = "environment"; // Can be 'user' or 'environment' to access back or front camera (NEAT!)
+var constraints = {
+  audio: false,
+  video: {
+   facingMode: facingMode
+  }
+};
+
+navigator.mediaDevices.getUserMedia(constraints)
+.then(function success(stream) {
+    video.srcObject = stream;
+});
+
+
+
 //When "Scan Ost QR" button is pressed the button class changes to on, if it was off and video is displayed.
 //If it was on, it is turned off. 
 button.addEventListener("click", event => {
@@ -43,10 +59,17 @@ button_2.addEventListener("click", event => {
         video_2.style.display = "block";
         video_2.style.width = "273.599px";
         video_2.style.height = "486.396px";
+        navigator.mediaDevices.getUserMedia(constraints)
+        .then(function success(stream) {
+        video_2.srcObject = stream;
+        });
     }
     else{
         button_2.className = "off";
         video_2.style.display = "none";
+        video_2.srcObject.getTracks().forEach(function(track){
+            track.stop();
+        });
     }
 });
 
