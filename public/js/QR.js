@@ -1,4 +1,4 @@
-const { default: QrScanner } = require("qr-scanner");
+
 
 
 //Video elements
