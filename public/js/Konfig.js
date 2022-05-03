@@ -9,12 +9,7 @@ async function configure(event){
     let data = new FormData(event.target);
     
 
-    for(pair of data.entries()){
-        console.log(pair);
-        if(pair[0] == "password"){
-            console.log(pair[1].length);
-        }
-    }
+   
     await SortObject(data);
     dataJson = Object.fromEntries(data.entries());
     console.log(dataJson);
