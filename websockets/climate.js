@@ -80,7 +80,7 @@ async function SortData(ws, data){
 
     //Send data to sensors
     if(j != -1 && data != "site"){
-        
+       
     }
 
 }
