@@ -1,11 +1,3 @@
-$(function(){
-    $(".temp").load("../index.html #navbar", function(){
-        $.getScript("../js/websocket.js", complete = current);
-        $("#navbar").clone().contents().appendTo("#nav");
-        $(".temp").remove();
-    });
-});
-
 const burgerBtn = document.getElementsByClassName('burgermenu_btn')[0]
 const navbarLinks = document.getElementsByClassName('navbar_links')[0]
 const bars = burgerBtn.querySelectorAll(".bar");
@@ -21,6 +13,16 @@ burgerBtn.addEventListener('click', () => {
   }, 50);
 
 });
+
+$(function(){
+    $(".temp").load("../index.html #navbar", function(){
+        $.getScript("../js/websocket.js", complete = current);
+        $("#navbar").clone().contents().appendTo("#nav");
+        $(".temp").remove();
+    });
+});
+
+
 
 
 function current(){
