@@ -23,6 +23,7 @@ function configure(event){
 function SortObject(obj){
     for(key in obj){
         if(obj.key == null || obj.key == ""){
+            console.log(obj.key);
             delete obj.key;
         }
     }
