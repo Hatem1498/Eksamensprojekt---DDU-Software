@@ -23,6 +23,7 @@ async function SortObject(form){
 
     for(let pair of form.entries()){
         if(pair[1] == null || pair[1] == ''){
+            console.log(pair);
             form.delete(pair[0]);
         }
     }
