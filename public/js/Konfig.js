@@ -28,6 +28,6 @@ function SortObject(obj){
             n_obj.key = obj.key
         }
         console.log(n_obj)
-        return n_obj;
     }
+    return n_obj;
 }
