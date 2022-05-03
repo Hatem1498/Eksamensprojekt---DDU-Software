@@ -4,20 +4,20 @@ form.addEventListener("submit", configure);
 
 let dataJson;
 
-async function configure(event){
+function configure(event){
     
     let data = new FormData(event.target);
     
     console.log(data);
    
-    await SortObject(data);
+    SortObject(data);
     dataJson = Object.fromEntries(data.entries());
     console.log(dataJson);
     
 }
 
 //Remove empty properties
-async function SortObject(form){
+function SortObject(form){
 
     for(let pair of form.entries()){
         console.log(pair)
