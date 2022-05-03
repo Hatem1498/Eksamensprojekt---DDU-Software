@@ -7,10 +7,10 @@ form.addEventListener("submit", configure);
 function configure(event){
     
     let data = new FormData(event.target);
-    let dataJson = Object.fromEntries(data.entries());
+    /* let dataJson = Object.fromEntries(data.entries()); */
 
-    SortObject(dataJson);
-    console.log(dataJson);
+    SortObject(data);
+    console.log(data);
     
 }
 
