@@ -5,6 +5,7 @@ let fetchData = m.fetch;
 
 let konfig = data;
 
+console.log(konfig);
 
 let ws_site = [];
 let ws_sensor = [];
