@@ -6,7 +6,7 @@ form.addEventListener("submit", configure);
 
 function configure(event){
     
-    const data = new FormData(event.target);
+    let data = new FormData(event.target);
     let dataJson = Object.fromEntries(data.entries());
 
     console.log(Reflect.getOwnPropertyDescriptor(window, "dataJson"));
