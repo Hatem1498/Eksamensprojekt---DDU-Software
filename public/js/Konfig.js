@@ -12,7 +12,7 @@ function configure(event){
     
     console.log(data);
 
-    SortObject(data);
+    data = SortObject(data);
 
     console.log(data);
 
@@ -21,10 +21,11 @@ function configure(event){
 }
 
 function SortObject(obj){
+    n_obj = {};
     for(key in obj){
-        if(obj.key == null || obj.key == ""){
-            console.log(obj.key);
-            delete obj.key;
+        if(obj.key !== null || obj.key !== ""){
+            n_obj.key = obj.key
         }
     }
+    return n_obj;
 }
