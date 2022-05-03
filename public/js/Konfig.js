@@ -12,10 +12,9 @@ function configure(event){
     
     data = SortObject(data);
 
-    window.data = data;
 }
 
-console.log(window.data);
+
 
 function SortObject(obj){
    let n_obj = {};
