@@ -19,8 +19,8 @@ function configure(event){
 function SortObject(obj){
 
     for(key in obj){
-        if(obj[key] == null || obj[key] == ""){
-            delete obj[key];
+        if(obj.key == null || obj.key == ""){
+            delete obj.key;
         }
     }
 }
