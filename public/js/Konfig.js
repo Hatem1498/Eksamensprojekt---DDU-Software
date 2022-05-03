@@ -9,7 +9,9 @@ function configure(event){
     let data = new FormData(event.target);
     
 
-    console.log(data.entries());
+    for(pair of data.entries()){
+        console.log(pair);
+    }
     SortObject(data);
     let dataJson = Object.fromEntries(data.entries());
     console.log(dataJson);
