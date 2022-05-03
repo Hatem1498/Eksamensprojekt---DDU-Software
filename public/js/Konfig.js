@@ -2,7 +2,7 @@ const form = document.getElementsByClassName("Konfig")[0];
 
 form.addEventListener("submit", configure);
 
-let data;
+
 
 function configure(event){
     let v_ssid = document.querySelector("#ssid").value;
@@ -11,9 +11,11 @@ function configure(event){
     data = {ssid: v_ssid, password: v_password, t_sensor_1: v_sensor_1};
     
     data = SortObject(data);
+
+    window.data = data;
 }
 
-console.log(data);
+console.log(window.data);
 
 function SortObject(obj){
    let n_obj = {};
