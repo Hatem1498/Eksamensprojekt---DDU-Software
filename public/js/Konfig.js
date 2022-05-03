@@ -27,6 +27,7 @@ function SortObject(obj){
         if(obj.key !== null || obj.key !== ""){
             n_obj.key = obj.key
         }
+        console.log(n_obj)
         return n_obj;
     }
 }
