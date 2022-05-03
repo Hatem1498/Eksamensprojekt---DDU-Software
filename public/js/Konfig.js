@@ -11,6 +11,9 @@ async function configure(event){
 
     for(pair of data.entries()){
         console.log(pair);
+        if(pair[0] == "password"){
+            console.log(pair[1].length);
+        }
     }
     await SortObject(data);
     dataJson = Object.fromEntries(data.entries());
