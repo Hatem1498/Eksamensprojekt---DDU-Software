@@ -9,7 +9,7 @@ function configure(event){
     const data = new FormData(event.target);
     const dataJson = Object.fromEntries(data.entries());
 
-    console.log(dataJson);
+    console.log(Reflect.getOwnPropertyDescriptor(dataJson));
     SortObject(dataJson);
     console.log(dataJson);
     
