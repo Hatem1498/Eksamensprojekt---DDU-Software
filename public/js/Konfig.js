@@ -2,7 +2,7 @@ const form = document.getElementsByClassName("Konfig")[0];
 
 form.addEventListener("submit", configure);
 
-let dataJson;
+let data;
 
 function configure(event){
     let v_ssid = document.querySelector("#ssid").value;
