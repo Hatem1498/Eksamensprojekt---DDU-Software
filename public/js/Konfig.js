@@ -20,7 +20,7 @@ function SortObject(obj){
     for(key in obj){
         if(obj.key == null || obj.key == ""){
             console.log(key);
-            dataJson.delete(String(key));
+            obj.delete(String(key));
             console.log("delete");
         }
     }
