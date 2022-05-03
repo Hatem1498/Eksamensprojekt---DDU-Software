@@ -9,7 +9,7 @@ function configure(event){
     let data = new FormData(event.target);
     
 
-    console.log(data);
+    console.log(data.entries());
     SortObject(data);
     let dataJson = Object.fromEntries(data.entries());
     console.log(dataJson);
