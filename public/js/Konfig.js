@@ -25,7 +25,7 @@ function SortObject(obj){
     for(key in obj){
         console.log(key);
         if(obj.key !== null || obj.key !== ""){
-            n_obj.key = obj.key
+            n_obj.st = obj.key
         }
         console.log(n_obj)
     }
