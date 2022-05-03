@@ -2,12 +2,12 @@ const form = document.getElementsByClassName("Konfig")[0];
 
 form.addEventListener("submit", configure);
 
-let dataJson;
+
 
 function configure(event){
     
     const data = new FormData(event.target);
-    dataJson = Object.fromEntries(data.entries());
+    let dataJson = Object.fromEntries(data.entries());
 
     console.log(Reflect.getOwnPropertyDescriptor(window, "dataJson"));
     SortObject(dataJson);
