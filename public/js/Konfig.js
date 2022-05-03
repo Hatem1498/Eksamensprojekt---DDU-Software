@@ -4,7 +4,7 @@ form.addEventListener("submit", configure);
 
 let dataJson;
 
-function configure(event){
+async function configure(event){
     
     let data = new FormData(event.target);
     
