@@ -18,7 +18,7 @@ function configure(event){
     
 }
 
-//Remove empty keys
+//Remove empty properties
 function SortObject(form){
 
     for(let pair of form.entries()){
