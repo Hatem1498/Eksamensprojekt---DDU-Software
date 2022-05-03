@@ -10,8 +10,6 @@ function configure(event){
 
     console.log(dataJson);
 
-    if(jQuery.isEmptyObject(dataJson)){
-        console.log("Empty Json");
-    }
+    console.log(JSON.stringify(dataJson));
 
 }
