@@ -12,9 +12,9 @@ function configure(event){
     
     console.log(data);
 
-    data = SortObject(data);
+    let dataJson = SortObject(data);
 
-    console.log(data);
+    console.log(dataJson);
 
     
     
