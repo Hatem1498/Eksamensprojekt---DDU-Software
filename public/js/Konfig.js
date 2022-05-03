@@ -12,9 +12,9 @@ function configure(event){
     
     console.log(data);
 
-    let dataJson = SortObject(data);
+    data = SortObject(data);
 
-    console.log(dataJson);
+    console.log(data);
 
     
     
@@ -27,6 +27,6 @@ function SortObject(obj){
         if(obj.key !== null || obj.key !== ""){
             n_obj.key = obj.key
         }
+        return n_obj;
     }
-    return n_obj;
 }
