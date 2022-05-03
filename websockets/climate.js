@@ -1,7 +1,9 @@
 const m = require("../database.js");
-
+import {data} from "../public/js/Konfig.js";
 let database = m.insert;
 let fetchData = m.fetch;
+
+let konfig = data;
 
 
 let ws_site = [];
