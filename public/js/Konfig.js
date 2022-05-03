@@ -22,7 +22,7 @@ async function configure(event){
 async function SortObject(form){
 
     for(let pair of form.entries()){
-        if(pair[1] == null || pair[1] == ''){
+        if(pair[1] == null && pair[1] == ''){
             form.delete(pair[0]);
         }
     }
