@@ -20,6 +20,8 @@ function configure(event){
 function SortObject(form){
 
     for(let pair of form.entries()){
-        console.log(pair);
+        if(pair[1] == null || pair[1] == ""){
+            form.delete(pair[0]);
+        }
     }
 }
