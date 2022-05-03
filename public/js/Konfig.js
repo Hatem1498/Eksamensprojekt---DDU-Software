@@ -11,7 +11,7 @@ function configure(event){
     for(let pair of data.entries()){
         console.log(pair);
         if(pair[1].length == 0){
-            form.delete(pair[0]);
+            data.delete(pair[0]);
         }
     }
    
