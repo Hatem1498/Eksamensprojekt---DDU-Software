@@ -31,4 +31,3 @@ function SortObject(obj){
 }
 
 
-export {data};
