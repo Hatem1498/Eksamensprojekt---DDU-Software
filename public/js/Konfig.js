@@ -17,13 +17,9 @@ function configure(event){
 }
 
 //Remove empty keys
-function SortObject(obj){
+function SortObject(form){
 
-    for(key in obj){
-        if(obj.key == null || obj.key == ""){
-            console.log(key);
-            obj.delete(String(key));
-            console.log("delete");
-        }
+    for(let pair of form.entries()){
+        console.log(pair);
     }
 }
