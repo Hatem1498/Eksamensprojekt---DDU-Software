@@ -7,9 +7,9 @@ let dataJson;
 function configure(event){
     
     const data = new FormData(event.target);
-    const dataJson = Object.fromEntries(data.entries());
+    dataJson = Object.fromEntries(data.entries());
 
-    console.log(Reflect.getOwnPropertyDescriptor(dataJson));
+
     SortObject(dataJson);
     console.log(dataJson);
     
@@ -20,9 +20,7 @@ function SortObject(obj){
 
     for(key in obj){
         if(obj.key == null || obj.key == ""){
-            console.log(key);
-            console.log(delete obj.key);
-            console.log("delete");
+            delete obj.key;
         }
     }
 }
