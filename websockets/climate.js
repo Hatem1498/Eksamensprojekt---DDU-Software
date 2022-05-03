@@ -68,6 +68,7 @@ function disconnect(ws){
 async function SortData(ws, data){
 
     let i = ws_sensor.indexOf(ws);
+    let j = ws_site.indexOf(ws);
     if(i != -1 && data != "sensor"){
         let values = data.split(",");
         let temp = values[0];
@@ -76,5 +77,11 @@ async function SortData(ws, data){
         //database function sends query to database with the data. 
         await database(temp, hum);
     }
+
+    //Send data to sensors
+    if(j != -1 && data != "site"){
+        
+    }
+
 }
 
