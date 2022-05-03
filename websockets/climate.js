@@ -1,11 +1,11 @@
 const m = require("../database.js");
-const n = require("../public/js/Konfig.js");
+/* const n = require("../public/js/Konfig.js"); */
 let database = m.insert;
 let fetchData = m.fetch;
 
-let konfig = n.data;
+/* let konfig = n.data;
 
-console.log(konfig);
+console.log(konfig); */
 
 let ws_site = [];
 let ws_sensor = [];
