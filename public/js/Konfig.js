@@ -12,7 +12,18 @@ function configure(event){
     
     console.log(data);
 
-    console.log(dataJson);
+    SortObject(data);
+
+    console.log(data);
+
+    
     
 }
 
+function SortObject(obj){
+    for(key in obj){
+        if(obj.key == null || obj.key == ""){
+            delete obj.key;
+        }
+    }
+}
