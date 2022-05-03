@@ -10,8 +10,8 @@ function configure(event){
     const dataJson = Object.fromEntries(data.entries());
 
     console.log(dataJson);
-
-    console.log(SortObject(dataJson));
+    SortObject(dataJson);
+    console.log(dataJson);
     
 }
 
