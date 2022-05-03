@@ -9,7 +9,18 @@ function configure(event){
     const dataJson = Object.fromEntries(data.entries());
 
     console.log(dataJson);
+    console.log(Key_isEmpty(dataJson.ssid));
+    console.log(Key_isEmpty(dataJson.password));
+    console.log(Key_isEmpty(dataJson.t_sensor_1));
+    
 
-    console.log(JSON.stringify(dataJson));
+}
 
+
+function Key_isEmpty(key){
+
+    if(key !== null && key !== ""){
+        return false
+    }
+    return true;
 }
