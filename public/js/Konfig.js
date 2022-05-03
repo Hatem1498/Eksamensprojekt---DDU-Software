@@ -20,6 +20,7 @@ function SortObject(obj){
 
     for(key in obj){
         if(obj.key == null || obj.key == ""){
+            console.log(key);
             delete obj.key;
             console.log("delete");
         }
