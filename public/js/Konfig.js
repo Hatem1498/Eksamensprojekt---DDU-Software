@@ -23,9 +23,8 @@ function configure(event){
 function SortObject(obj){
    let n_obj = {};
     for(key in obj){
-        console.log(obj[String(key)]);
-        if(obj.key !== null || obj.key !== ""){
-            n_obj[String(key)] = obj.key
+        if(obj[String(key)] !== null || obj[String(key)] !== ""){
+            n_obj[String(key)] = obj[String(key)];
         }
         console.log(n_obj)
     }
