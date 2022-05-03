@@ -8,8 +8,8 @@ function configure(event){
     
     let data = new FormData(event.target);
     
-    for(let pair of form.entries()){
-        console.log(pair)
+    for(let pair of data.entries()){
+        console.log(pair);
         if(pair[1].length == 0){
             form.delete(pair[0]);
         }
