@@ -1,5 +1,4 @@
-let temp = [];
-let hum = [];
+
 
 let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");

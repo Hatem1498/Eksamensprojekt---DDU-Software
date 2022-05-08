@@ -5,11 +5,10 @@ const ws = new WebSocket(HOST);
 
 ws.onopen = (ev) => {
     ws.send("site");
+
     if(document.URL.includes("Graphs.html")){
         ws.send("fetch");
     }
-
-  
 }
 
 if(document.URL.includes("Graphs.html")){
@@ -23,6 +22,8 @@ ws.onmessage = (event) => {
     //If data from the event is a Json, then the temp and hum are updated for the chart
     if(isJson(event.data)){
         let time = [];
+        let temp = [];
+        let hum = [];
         console.log(JSON.parse(event.data));
         let json = JSON.parse(event.data);
         let refpoint = (new Date((json.filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
