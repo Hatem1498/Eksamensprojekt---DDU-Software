@@ -91,4 +91,4 @@ async function HandleRequest(ws, data){
 
 }
 
-export {result}
+/* export {result} */
