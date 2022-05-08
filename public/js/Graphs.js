@@ -29,7 +29,7 @@ const config = {
     type: 'line',
     data: data,
     options: {
-      responsive: false,
+      responsive: true,
       interaction: {
         mode: 'index',
         intersect: false,
