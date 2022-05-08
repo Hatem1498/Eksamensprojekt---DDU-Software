@@ -81,6 +81,7 @@ async function HandleRequest(ws, data){
         await fetchData();
         console.log("data fetched!");
         let result = m.climate;
+        console.log(result);
         ws.send(result);
         
     }
