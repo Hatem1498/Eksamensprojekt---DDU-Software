@@ -2,7 +2,7 @@ const m = require("../database.js");
 
 let database = m.insert;
 let fetchData = m.fetch;
-
+let result = m.climate;
 
 let ws_site = [];
 let ws_sensor = [];
@@ -15,7 +15,7 @@ function websocket(wss) {
             
            CheckOrigin(ws, data);
            
-           SortData(ws, data);
+           HandleRequest(ws, data);
            
            
         });
@@ -62,7 +62,7 @@ function disconnect(ws){
     }
 }
 
-async function SortData(ws, data){
+async function HandleRequest(ws, data){
 
     let i = ws_sensor.indexOf(ws);
     let j = ws_site.indexOf(ws);
@@ -75,10 +75,20 @@ async function SortData(ws, data){
         await database(temp, hum);
     }
 
+    //Fetch data from climate tabel
+    if(j != -1 && data == "fetch"){
+        console.log("fetching data...");
+        await fetchData();
+        console.log("data fetched!");
+        result = m.climate;
+        
+    }
+
     //Send data to sensors
     if(j != -1 && data != "site"){
-       ws.send("data");
+       ws.send(data);
     }
 
 }
 
+export {result}

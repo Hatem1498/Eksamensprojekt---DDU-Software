@@ -10,14 +10,15 @@
         <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
         <script src="../js/navbar.js" defer></script>
         <link rel="stylesheet" href="../index.css">
-        
+
+        <script src="../js/websocket.js" defer></script>
+
         <script type="module" defer>
-            const m = require("../../database.js");
-            let fetch = m.fetch;
-            await fetch();
-            let data = m.climate;
-            console.log(data);
+
             
+
+            import result from "../../websockets/climate.js";
+            console.log(result);
         </script>
 
         <script src="../js/Graphs.js" defer></script>
