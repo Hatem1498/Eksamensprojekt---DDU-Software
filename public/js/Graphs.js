@@ -4,7 +4,7 @@ let hum = [];
 let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");
 
-const labels = [0, 1, 2, 3, 4, 5];
+let labels = [0, 1, 2, 3, 4, 5];
 
 const data = {
     labels: labels,
