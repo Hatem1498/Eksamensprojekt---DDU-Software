@@ -1,7 +1,8 @@
 
 function websocket(){
-    const HOST = location.origin.replace(/^http/, "ws");
-    const ws = new WebSocket(HOST);
+    console.log("Connecting...");
+    let HOST = location.origin.replace(/^http/, "ws");
+    let ws = new WebSocket(HOST);
 
     ws.onopen = (ev) => {
         ws.send("site");
