@@ -44,7 +44,7 @@ ws.onclose = ()=>{
 };
 
 
-
+setTimeout(()=> {ws.close()}, 2000)
 
 
 
