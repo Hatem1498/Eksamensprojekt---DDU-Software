@@ -13,7 +13,7 @@ ws.onopen = (ev) => {
         setTimeout(() => {
             ws.send("fetch");
         }, 10000);
-    }     */
+}     */
 }
 
 ws.onmessage = (event) => {
