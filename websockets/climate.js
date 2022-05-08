@@ -84,7 +84,7 @@ async function HandleRequest(ws, data){
             let result = m.climate;
             console.log(`Result: ${result}`);
             ws.send(result);
-        }, 50)
+        }, 50);
         
         
     }

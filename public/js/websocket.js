@@ -13,8 +13,7 @@ ws.onopen = (ev) => {
 ws.onmessage = (event) => {
 
     if(isJson(event.data)){
-        console.log("JSON!");
-        console.log(event.data);
+        console.log(JSON.parse(event.data));
     }
     
 

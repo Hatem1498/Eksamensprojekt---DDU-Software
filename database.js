@@ -60,7 +60,7 @@ fetch: async function fetchData(){
                 .query(query)
             
                 .then((result) => {
-                    console.log(JSON.stringify(result.rows));
+                    /* console.log(JSON.stringify(result.rows)); */
                     module.exports.climate = JSON.stringify(result.rows);
                 })
                 // Handle errors
