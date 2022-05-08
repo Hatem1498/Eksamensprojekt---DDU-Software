@@ -42,18 +42,54 @@ const config = {
         }
       },
       scales: {
+        x: {
+            display: true,
+            title: {
+            display: true,
+            text: "Tid/Sekunder",
+            color: "#3D50E3",
+            font: {
+              family: "Arial",
+              size: 20,
+              weight: "bold",
+              lineheight: 1.2,
+            },
+            padding: {top: 20, left: 0, right :0, bottom: 0}
+          }
+        },
         temp: {
           type: 'linear',
           display: true,
           position: 'left',
-          labelString: "Temperatur"
+          title: {
+            display: true,
+            text: "Temperature [C]",
+            color: "#3D50E3",
+            font: {
+              family: "Arial",
+              size: 20,
+              weight: "bold",
+              lineheight: 1.2,
+            },
+            padding: {top: 30, left: 0, right :0, bottom: 0}
+          }
         },
         hum: {
           type: 'linear',
           display: true,
           position: 'right',
-          labelString: "Humidity",
-  
+          title: {
+            display: true,
+            text: "Relative Humidity %",
+            color: "#3D50E3",
+            font: {
+              family: "Arial",
+              size: 20,
+              weight: "bold",
+              lineheight: 1.2,
+            },
+            padding: {top: 30, left: 0, right :0, bottom: 0}
+          },
           // grid line settings
           grid: {
             drawOnChartArea: false, // only want the grid lines for one axis to show up
