@@ -2,7 +2,7 @@ const m = require("../database.js");
 
 let database = m.insert;
 let fetchData = m.fetch;
-let result = m.climate;
+
 
 let ws_site = [];
 let ws_sensor = [];
@@ -80,7 +80,8 @@ async function HandleRequest(ws, data){
         console.log("fetching data...");
         await fetchData();
         console.log("data fetched!");
-        result = m.climate;
+        let result = m.climate;
+        ws.send(result);
         
     }
 
@@ -91,4 +92,3 @@ async function HandleRequest(ws, data){
 
 }
 
-/* export {result} */
