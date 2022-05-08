@@ -15,7 +15,7 @@ function websocket(wss) {
             
            CheckOrigin(ws, data);
            
-           HandleRequest(ws, data);
+           await HandleRequest(ws, data);
            
            
         });
