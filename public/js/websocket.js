@@ -1,9 +1,7 @@
-let close_ = true;
 function websocket(){
     console.log("Connecting...");
     let HOST = location.origin.replace(/^http/, "ws");
     let ws = new WebSocket(HOST);
-    
     
     ws.onopen = (ev) => {
         ws.send("site");
@@ -35,22 +33,23 @@ function websocket(){
                 time.push(date_time);
             }
             updateChart(temp, hum, time);
-            if(close_){
-                ws.close();
-            }
+           
         }
         
     };
-
+    setTimeout(()=>{
+        ws.close();
+    }, 10000);
+    
     ws.onclose = ()=>{
         console.log("Connection closed...Restarting");
-        close_ = false;
-        ws = null;
+        
         websocket()};
 
 }
 
 websocket();
+
 
 
 
