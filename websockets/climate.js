@@ -86,7 +86,7 @@ async function HandleRequest(ws, data){
     }
 
     //Send data to sensors
-    if(j != -1 && data != "site"){
+    if(j != -1 && data == "config"){
        ws.send(data);
     }
 
