@@ -3,7 +3,7 @@
 let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");
 
-const labels = [0, 1, 2, 3, 4, 5]
+const labels = [0, 1, 2, 3, 4, 5];
 
 const data = {
     labels: labels,
@@ -38,7 +38,7 @@ const config = {
       plugins: {
         title: {
           display: true,
-          text: 'Chart.js Line Chart - Multi Axis'
+          text: 'Temperature and Relative Humidity as function of time'
         }
       },
       scales: {
