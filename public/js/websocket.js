@@ -14,7 +14,7 @@ ws.onmessage = (event) => {
     console.log(event.data);
     if(isJson(event.data)){
         console.log("JSON!");
-        console.log(event);
+        console.log(event.data);
     }
     
 
