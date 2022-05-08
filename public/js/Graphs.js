@@ -46,11 +46,13 @@ const config = {
           type: 'linear',
           display: true,
           position: 'left',
+          title: "Temperatur"
         },
         hum: {
           type: 'linear',
           display: true,
           position: 'right',
+          title: "Humidity",
   
           // grid line settings
           grid: {
