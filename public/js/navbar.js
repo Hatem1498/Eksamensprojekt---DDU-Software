@@ -8,7 +8,7 @@ $(function(){
         const burgerBtn = document.getElementsByClassName('burgermenu_btn')[0]
         const navbarLinks = document.getElementsByClassName('navbar_links')[0]
         const bars = burgerBtn.querySelectorAll(".bar");
-        //Logic for navbar
+        //Logic for navbar and burgermenu button
         burgerBtn.addEventListener('click', () => {
         navbarLinks.classList.toggle('transition');
         setTimeout(()=>{
