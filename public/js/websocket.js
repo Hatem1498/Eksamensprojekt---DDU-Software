@@ -15,7 +15,11 @@ ws.onmessage = (event) => {
     if(isJson(event.data)){
         console.log(JSON.parse(event.data));
         let json = JSON.parse(event.data);
-        console.log(json[0].temp);
+        for(obj in json){
+            temp.push(obj.temp);
+            hum.push(obj.hum);
+        }
+        updateChart(temp, hum, [0, 1, 2, 3, 4, 5]);
     }
     
 

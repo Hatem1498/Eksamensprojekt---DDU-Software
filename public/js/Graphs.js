@@ -1,4 +1,5 @@
-
+let temp = [];
+let hum = [];
 
 let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");
@@ -99,4 +100,11 @@ const config = {
     },
 };
 
-const chart = new Chart(canvas, config);
+let chart = new Chart(canvas, config);
+
+function updateChart(temp, hum, label){
+  chart.data.datasets[0].data = temp;
+  chart.data.datasets[1].data = hum;
+  chart.data.labels = label;
+  chart.update();
+}
