@@ -40,6 +40,7 @@ function websocket(){
 
     ws.onclose = ()=>{
         console.log("Connection closed...Restarting");
+        ws = null;
         websocket()};
 
 }
