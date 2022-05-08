@@ -58,3 +58,5 @@ const config = {
       }
     },
 };
+
+const chart = new Chart(canvas, config);
