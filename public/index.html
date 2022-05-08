@@ -8,25 +8,10 @@
         <!-- css -->
         <link rel="stylesheet" href="../index.css">
         <!-- javascript -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+        
         <script src="../js/websocket.js" defer></script>
 
-        <script defer>
-        const burgerBtn = document.getElementsByClassName('burgermenu_btn')[0]
-        const navbarLinks = document.getElementsByClassName('navbar_links')[0]
-        const bars = burgerBtn.querySelectorAll(".bar");
-        //Logic for navbar and burgermenu button
-        burgerBtn.addEventListener('click', () => {
-        navbarLinks.classList.toggle('transition');
-            setTimeout(()=>{
-            navbarLinks.classList.toggle('active');
-            burgerBtn.classList.toggle('active'); 
-            for(let x = 0; x < bars.length; x++){
-            bars[x].classList.toggle('x');
-            }
-            }, 50);
-        });
-        </script>
+        
         
         
 
@@ -42,7 +27,22 @@
                 <span class = "bar bar2"></span>
                 <span class = "bar bar3"></span>
             </div>
-            
+            <script defer>
+                const burgerBtn = document.getElementsByClassName('burgermenu_btn')[0]
+                const navbarLinks = document.getElementsByClassName('navbar_links')[0]
+                const bars = burgerBtn.querySelectorAll(".bar");
+                //Logic for navbar and burgermenu button
+                burgerBtn.addEventListener('click', () => {
+                navbarLinks.classList.toggle('transition');
+                    setTimeout(()=>{
+                    navbarLinks.classList.toggle('active');
+                    burgerBtn.classList.toggle('active'); 
+                    for(let x = 0; x < bars.length; x++){
+                    bars[x].classList.toggle('x');
+                    }
+                    }, 50);
+                });
+                </script>
             <div class = "navbar_links">
                 <ul>
                     <li><a href="/html/Lagerhus.html">Overblik over lagehuset</a></li>
