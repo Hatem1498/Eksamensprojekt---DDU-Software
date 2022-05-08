@@ -16,6 +16,12 @@ ws.onopen = (ev) => {
 }     */
 }
 
+if(document.URL.includes("Graphs.html")){
+    setInterval(()=>{
+        ws.send("fetch");
+    }, 10000);
+}
+
 ws.onmessage = (event) => {
 
     //If data from the event is a Json, then the temp and hum are updated for the chart
