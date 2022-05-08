@@ -32,7 +32,7 @@ function websocket(){
                 let date_time = parseInt((((new Date(json[obj].date_time)).getTime())-refpoint)/1000);
                 time.push(date_time);
             }
-            updateChart(temp, hum, [0, 1, 2, 3, 4, 5]);
+            updateChart(temp, hum, time);
         }
         
     };
