@@ -70,7 +70,7 @@ async function HandleRequest(ws, data){
         let values = data.split(",");
         let temp = values[0];
         let hum = values[1];
-        console.log("Data!");
+        console.log("Inserting Data Into climate");
         //database function sends query to database with the data. 
         await database(temp, hum);
     }
@@ -82,7 +82,6 @@ async function HandleRequest(ws, data){
         console.log("data fetched!");
         setTimeout(()=>{
             let result = m.climate;
-            console.log(`Result: ${result}`);
             ws.send(result);
         }, 50);
         
