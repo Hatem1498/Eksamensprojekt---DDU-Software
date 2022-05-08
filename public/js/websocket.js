@@ -9,11 +9,7 @@ ws.onopen = (ev) => {
         ws.send("fetch");
     }
 
-    /* while(document.URL.includes("Graphs.html")){
-        setTimeout(() => {
-            ws.send("fetch");
-        }, 10000);
-}     */
+  
 }
 
 if(document.URL.includes("Graphs.html")){
