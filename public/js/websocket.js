@@ -24,23 +24,22 @@ function websocket(){
             let time = [];
             let temp = [];
             let hum = [];
-            console.log(JSON.parse(event.data));
             let json = JSON.parse(event.data);
             let refpoint = (new Date((json.filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
-            console.log(refpoint);
             for(obj in json){
                 temp.push(json[obj].temp);
                 hum.push(json[obj].hum);
                 let date_time = parseInt((((new Date(json[obj].date_time)).getTime())-refpoint)/1000);
                 time.push(date_time);
             }
-            console.log(time);
             updateChart(temp, hum, [0, 1, 2, 3, 4, 5]);
         }
         
     };
 
-    ws.onclose = ()=>{websocket()};
+    ws.onclose = ()=>{
+        console.log("Connection closed...Restarting");
+        websocket()};
 
 }
 
