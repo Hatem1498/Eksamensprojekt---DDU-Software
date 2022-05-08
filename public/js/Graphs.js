@@ -1,23 +1,25 @@
+
+
 let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");
 
-const labels = Utils.months({count: 7});
+const labels = [0, 1, 2, 3, 4, 5]
 
 const data = {
     labels: labels,
     datasets: [
       {
         label: 'Temp [C]',
-        data: Utils.numbers(NUMBER_CFG),
-        borderColor: Utils.CHART_COLORS.red,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
+        data: [0, 10, 20, 30, 40, 50],
+        borderColor: "#FF5733",
+        backgroundColor: "#FF5733",
         yAxisID: 'temp',
       },
       {
         label: 'Relative Humidity %',
-        data: Utils.numbers(NUMBER_CFG),
-        borderColor: Utils.CHART_COLORS.blue,
-        backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
+        data: [0, 40, 50, 60, 70, 80],
+        borderColor: "#175DD8",
+        backgroundColor: "#175DD8",
         yAxisID: 'hum',
       }
     ]
