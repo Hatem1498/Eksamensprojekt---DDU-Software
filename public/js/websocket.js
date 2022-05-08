@@ -16,10 +16,10 @@ ws.onmessage = (event) => {
         console.log(JSON.parse(event.data));
         let json = JSON.parse(event.data);
         for(obj in json){
-            console.log(obj)
+            temp.push(json[obj].temp);
+            hum.push(json[obj].hum);
         }
-        /* console.log
-        updateChart(temp, hum, [0, 1, 2, 3, 4, 5]); */
+        updateChart(temp, hum, [0, 1, 2, 3, 4, 5]);
     }
     
 
