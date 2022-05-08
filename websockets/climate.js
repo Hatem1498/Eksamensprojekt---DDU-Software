@@ -7,7 +7,7 @@ let fetchData = m.fetch;
 let ws_site = [];
 let ws_sensor = [];
 
-function websocket(wss) {
+async function websocket(wss) {
     wss.on("connection", (ws) => {
         console.log("Client connected");
         
