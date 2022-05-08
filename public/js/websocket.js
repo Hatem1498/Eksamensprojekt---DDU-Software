@@ -39,8 +39,8 @@ function websocket(){
     };
     setTimeout(()=>{
         ws.close();
-    }, 10000);
-    
+    }, 12000);
+
     ws.onclose = ()=>{
         console.log("Connection closed...Restarting");
         
