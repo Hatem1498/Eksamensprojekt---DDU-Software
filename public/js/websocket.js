@@ -9,11 +9,11 @@ ws.onopen = (ev) => {
         ws.send("fetch");
     }
 
-    while(document.URL.includes("Graphs.html")){
+    /* while(document.URL.includes("Graphs.html")){
         setTimeout(() => {
             ws.send("fetch");
         }, 10000);
-    }    
+    }     */
 }
 
 ws.onmessage = (event) => {
