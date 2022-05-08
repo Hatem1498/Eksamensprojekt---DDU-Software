@@ -34,6 +34,7 @@ function websocket(){
                 time.push(date_time);
             }
             updateChart(temp, hum, time);
+            ws.close();
         }
         
     };
