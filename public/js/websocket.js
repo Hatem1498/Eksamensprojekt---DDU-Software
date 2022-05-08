@@ -1,45 +1,50 @@
-const HOST = location.origin.replace(/^http/, "ws");
-const ws = new WebSocket(HOST);
 
+function websocket(){
+    const HOST = location.origin.replace(/^http/, "ws");
+    const ws = new WebSocket(HOST);
 
+    ws.onopen = (ev) => {
+        ws.send("site");
 
-ws.onopen = (ev) => {
-    ws.send("site");
+        if(document.URL.includes("Graphs.html")){
+            ws.send("fetch");
+        }
+    }
 
     if(document.URL.includes("Graphs.html")){
-        ws.send("fetch");
+        setInterval(()=>{
+            ws.send("fetch");
+        }, 10000);
     }
-}
 
-if(document.URL.includes("Graphs.html")){
-    setInterval(()=>{
-        ws.send("fetch");
-    }, 10000);
-}
+    ws.onmessage = (event) => {
 
-ws.onmessage = (event) => {
-
-    //If data from the event is a Json, then the temp and hum are updated for the chart
-    if(isJson(event.data)){
-        let time = [];
-        let temp = [];
-        let hum = [];
-        console.log(JSON.parse(event.data));
-        let json = JSON.parse(event.data);
-        let refpoint = (new Date((json.filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
-        console.log(refpoint);
-        for(obj in json){
-            temp.push(json[obj].temp);
-            hum.push(json[obj].hum);
-            let date_time = parseInt((((new Date(json[obj].date_time)).getTime())-refpoint)/1000);
-            time.push(date_time);
+        //If data from the event is a Json, then the temp and hum are updated for the chart, since the Json would contain data stored in the database from the sensors.
+        if(isJson(event.data)){
+            let time = [];
+            let temp = [];
+            let hum = [];
+            console.log(JSON.parse(event.data));
+            let json = JSON.parse(event.data);
+            let refpoint = (new Date((json.filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
+            console.log(refpoint);
+            for(obj in json){
+                temp.push(json[obj].temp);
+                hum.push(json[obj].hum);
+                let date_time = parseInt((((new Date(json[obj].date_time)).getTime())-refpoint)/1000);
+                time.push(date_time);
+            }
+            console.log(time);
+            updateChart(temp, hum, [0, 1, 2, 3, 4, 5]);
         }
-        console.log(time);
-        updateChart(temp, hum, [0, 1, 2, 3, 4, 5]);
-    }
-    
+        
+    };
 
-};
+    ws.onclose = ()=>{websocket()};
+
+}
+
+websocket();
 
 function isJson(item) {
     item = typeof item !== "string"
