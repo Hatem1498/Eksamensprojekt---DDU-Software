@@ -1,7 +1,7 @@
 function websocket(){
     console.log("Connecting...");
     let HOST = location.origin.replace(/^http/, "ws");
-    let ws = new WebSocket(HOST);
+    let ws = new ReconnectingWebSocket(HOST);
     
     ws.onopen = (ev) => {
         ws.send("site");
@@ -43,7 +43,7 @@ function websocket(){
 
     ws.onclose = ()=>{
         console.log("Connection closed...Restarting");
-        setTimeout(()=>{websocket()}, 1000) };
+    };
 
 }
 
