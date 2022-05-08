@@ -37,7 +37,7 @@ ws.onmessage = (event) => {
     }
     
 };
-ws.close();
+
 
 ws.onclose = ()=>{
     console.log("Connection closed...Restarting");
