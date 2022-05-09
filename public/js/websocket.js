@@ -43,6 +43,7 @@ ws.onmessage = (event) => {
 
 ws.onclose = ()=>{
     console.log("Connection closed...Restarting");
+    ws.reconnect();
     /* setTimeout(()=>{
         location.reload();
     }, 1000); */
