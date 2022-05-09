@@ -46,7 +46,7 @@ const config = {
             display: true,
             title: {
             display: true,
-            text: "Tid/Sekunder",
+            text: "Tid [min]",
             color: "#3D50E3",
             font: {
               family: "Arial",
