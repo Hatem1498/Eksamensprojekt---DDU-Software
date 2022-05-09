@@ -18,7 +18,7 @@ for(let i = 0; i < count; i++){
         let p_width = parseFloat(document.getElementById(`shelf-${i-1}`).style.width.replace("px", ""));
         canvas.style.left = `${(p_left+20)+p_width}px`;
     }
-    //canvas width is the window width/4, 
+    //window width(w)/4, because there is 4 shelfs in each row. -40 to account for the +20 left that all first shelfs in a row get. 
     canvas.style.width = `${(w/4-40)}px`;
     canvas.style.height = `${(w/4-40)/2}px`;
     canvas.style.top = "75px";
