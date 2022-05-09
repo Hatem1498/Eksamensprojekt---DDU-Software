@@ -1,10 +1,21 @@
-let element = document.getElementById('box-1')
+let count = 16;
+
+for(let i = 0; i < count; i++){
+    let canvas = document.createElement('canvas');
+    canvas.id = `box-${i}`;
+    canvas.className = "shelf";
+    let w = $(window).width();
+    canvas.style.width = `${w/4-10}px`;
+    canvas.style.height = `${Math.ceil(w/4-50)}px`;
+    document.body.appendChild(canvas);
+}
+
+let element = document.getElementById('box-1');
 let x = 0; let y = 0
 
-let w = $(window).width();
 
-element.style.width = `${w/4-10}px`;
-element.style.height = `${Math.ceil(w/4-50)}px`;
+
+
 
 const position = { x: 0, y: 0 }
 
