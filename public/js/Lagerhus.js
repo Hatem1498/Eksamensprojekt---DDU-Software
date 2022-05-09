@@ -10,7 +10,7 @@ for(let i = 0; i < count; i++){
     canvas.className = "shelf";
     let w = $(window).width();
     canvas.style.width = `${w/4-20*6}px`;
-    canvas.style.height = `${Math.ceil(w/4-50)}px`;
+    canvas.style.height = `${Math.ceil(w/4-20*6-50)}px`;
     canvas.style.top = "75px";
     canvas.style.position = "relative";
     if(i > 0){
