@@ -60,6 +60,12 @@ const config = {
         temp: {
           type: 'linear',
           display: true,
+          ticks: {
+            suggestedMin: 0,
+            suggestedMax: 100,
+            stepValue: 5,
+            steps: 10
+          }
           position: 'left',
           title: {
             display: true,
