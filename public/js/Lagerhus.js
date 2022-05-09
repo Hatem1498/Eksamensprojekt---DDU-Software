@@ -20,7 +20,7 @@ for(let i = 0; i < count; i++){
     }
     //window width(w)/4, because there is 4 shelfs in each row. -40 to account for the +20 left that all first shelfs in a row get. 
     canvas.style.width = `${(w/4-40)}px`;
-    canvas.style.height = `${(w/4-40)/2}px`;
+    canvas.style.height = `${(w/4-40)/2-50}px`;
     canvas.style.top = "75px";
     //second row top is the sum of previous row height and top and aditional 125 to create space between them
     if(i > 3 && i < 8){
