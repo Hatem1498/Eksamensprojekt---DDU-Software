@@ -28,18 +28,18 @@ for(let i = 0; i < count; i++){
     //Row 3
     if(i > 7 && i < 12){
         console.log(i);
-        let p_height = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
-        let p_top = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
-        console.log(p_height+p_top);
-        canvas.style.top = `${p_height+p_top+25}px`;
+        let p_height_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
+        let p_top_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
+        console.log(p_height_1+p_top_1);
+        canvas.style.top = `${p_height_1+p_top_1+25}px`;
     }
     //Row 4
     if(i > 11 && i < 16){
         console.log(i);
-        let p_height = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
-        let p_top = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
-        console.log(p_height+p_top);
-        canvas.style.top = `${p_height+p_top+25}px`;
+        let p_height_2 = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
+        let p_top_2 = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
+        console.log(p_height_2+p_top_2);
+        canvas.style.top = `${p_height_2+p_top_2+25}px`;
     }
     document.body.appendChild(canvas);
     /* interact(canvas).draggable({listeners:{start(event){console.log(event.type,event.target)},move(event){position.x+=event.dx;position.y+=event.dy;event.target.style.transform=`translate(${position.x}px,${position.y}px)`},}}) */
