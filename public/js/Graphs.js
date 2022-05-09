@@ -61,13 +61,10 @@ const config = {
           type: 'linear',
           display: true,
           stacked: true,
-          ticks: {
-            min: 0,
-            max: 100,
-            stepValue: 5,
-            steps: 10
-            
-          },
+          min: 0,
+          max: 100,
+          stepValue: 5,
+          steps: 10,
           position: 'left',
           title: {
             display: true,
