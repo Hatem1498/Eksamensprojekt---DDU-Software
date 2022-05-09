@@ -9,8 +9,9 @@ for(let i = 0; i < count; i++){
         canvas.style.left = "20px";
     } 
     else{
-        let pre = parseInt(document.getElementById(`box-${i-1}`).style.left.replace("px", ""));
-        canvas.style.left = `${pre+20}px`;
+        let p_left = parseInt(document.getElementById(`box-${i-1}`).style.left.replace("px", ""));
+        let p_width = parseInt(document.getElementById(`box-${i-1}`).style.width.replace("px", ""));
+        canvas.style.left = `${(p_left+20)+p_width}px`;
     }
     canvas.className = "shelf";
     let w = $(window).width();
