@@ -9,9 +9,9 @@ function websocket(){
         if(document.URL.includes("Graphs.html")){
             ws.send("fetch");
         }
-        setTimeout(()=> {ws.close()}, 3000);
+        
     }
-
+    setTimeout(()=> {ws.close()}, 3000);
     if(document.URL.includes("Graphs.html")){
         setInterval(()=>{
             ws.send("fetch");
