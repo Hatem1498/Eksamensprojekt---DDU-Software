@@ -4,12 +4,20 @@ let x = 0; let y = 0
 for(let i = 0; i < count; i++){
     let canvas = document.createElement('canvas');
     canvas.id = `box-${i}`;
+    if(i == 0){
+        canvas.style.left = "0px";
+    }
     canvas.className = "shelf";
     let w = $(window).width();
     canvas.style.width = `${w/4-10}px`;
     canvas.style.height = `${Math.ceil(w/4-50)}px`;
+    canvas.style.top = "25px";
+    if(i > 0){
+    let pre = parseInt(document.getElementById(`box-${i-1}`).style.left.replace("px", ""));
+    canvas.style.left = `${pre+20}px`
+    }
     document.body.appendChild(canvas);
-    interact(canvas).draggable({listeners:{start(event){console.log(event.type,event.target)},move(event){position.x+=event.dx;position.y+=event.dy;event.target.style.transform=`translate(${position.x}px,${position.y}px)`},}})
+    /* interact(canvas).draggable({listeners:{start(event){console.log(event.type,event.target)},move(event){position.x+=event.dx;position.y+=event.dy;event.target.style.transform=`translate(${position.x}px,${position.y}px)`},}}) */
 }
 
 let element = document.getElementById('box-1');
