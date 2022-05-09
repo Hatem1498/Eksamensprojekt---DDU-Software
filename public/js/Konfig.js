@@ -11,6 +11,7 @@ function configure(event){
     data = {ssid: v_ssid, password: v_password, t_sensor_1: v_sensor_1};
     
     data = SortObject(data);
+    console.log(data);
     console.log(data.values());
     /* ws.send(data); */
 }
