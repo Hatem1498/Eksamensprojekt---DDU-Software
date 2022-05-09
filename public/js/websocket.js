@@ -9,9 +9,7 @@ ws.onopen = (ev) => {
     if(document.URL.includes("Graphs.html")){
         ws.send("fetch");
     }
-    setTimeout(()=>{
-        ws.close();
-    }, 5000)
+    
 }
 
 if(document.URL.includes("Graphs.html")){
@@ -45,6 +43,8 @@ ws.onmessage = (event) => {
 ws.onclose = ()=>{
     console.log("Connection closed...Restarting");
     ws.reconnect();
+    
+    //Previous solution, also the function solution
     /* setTimeout(()=>{
         location.reload();
     }, 1000); */
