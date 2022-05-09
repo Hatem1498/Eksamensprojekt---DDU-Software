@@ -5,16 +5,19 @@ for(let i = 0; i < count; i++){
     canvas.id = `shelf-${i}`;
     canvas.className = "shelf";
     canvas.style.position = "absolute";
+    //If the shelf as it the beginning of a row
     if(i == 0 || i == 4 || i == 8 || i == 12){
         canvas.style.left = "20px";
     } 
+    //else the shelf y-position is the previous shelf's width+y+20
     else{
         let p_left = parseFloat(document.getElementById(`shelf-${i-1}`).style.left.replace("px", ""));
         let p_width = parseFloat(document.getElementById(`shelf-${i-1}`).style.width.replace("px", ""));
         canvas.style.left = `${(p_left+20)+p_width}px`;
     }
-    canvas.style.width = `${w/4-20*5}px`;
-    canvas.style.height = `${w/4-20*5-50}px`;
+    //canvas width is the window width/4, and -20*5 to account for the gaps between the shelfs
+    canvas.style.width = `${(w/4)-(20*5)}px`;
+    canvas.style.height = `${(w/4)-(20*5-50)}px`;
     canvas.style.top = "75px";
     //Row 2
     if(i > 3 && i < 8){
