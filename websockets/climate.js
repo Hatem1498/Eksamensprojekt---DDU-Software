@@ -91,7 +91,7 @@ async function HandleRequest(ws, data){
     }
 
     //Send data to sensors
-    if(j !== -1 && data != "fetch"){
+    if(j !== -1 && data != "fetch" && data != "site" && data != "sensor"){
        console.log("Sending config to sensors");
        ws_sensor[0].send(data);
     }
