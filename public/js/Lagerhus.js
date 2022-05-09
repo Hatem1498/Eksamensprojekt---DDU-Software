@@ -3,7 +3,7 @@ let x = 0; let y = 0
 
 let w = $(window).width();
 
-element.style.width = w/4-25;
+element.style.width = w/4-10;
 
 const position = { x: 0, y: 0 }
 
