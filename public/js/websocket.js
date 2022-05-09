@@ -15,6 +15,7 @@ function websocket(){
     if(document.URL.includes("Graphs.html")){
         setInterval(()=>{
             ws.send("fetch");
+            ws.close();
         }, 10000);
     }
 
@@ -35,7 +36,7 @@ function websocket(){
             }
             updateChart(temp, hum, time);
         }
-        ws.close();
+        
     };
 
     
@@ -43,7 +44,7 @@ function websocket(){
         console.log("Connection closed...Restarting");
         setTimeout(()=>{
             websocket();
-        }, 1000);
+        }, 3000);
     };
 }
 
