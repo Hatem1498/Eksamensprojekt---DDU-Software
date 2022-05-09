@@ -12,6 +12,15 @@ for(let i = 0; i < count; i++){
     canvas.style.width = `${w/4-20*6}px`;
     canvas.style.height = `${Math.ceil(w/4-20*6-50)}px`;
     canvas.style.top = "75px";
+    if(i > 3){
+        canvas.style.top = "100px";
+    }
+    if(i > 7){
+        canvas.style.top = "125px";
+    }
+    if(i > 11){
+        canvas.style.top = "150px";
+    }
     canvas.style.position = "relative";
     if(i > 0){
     let pre = parseInt(document.getElementById(`box-${i-1}`).style.left.replace("px", ""));
