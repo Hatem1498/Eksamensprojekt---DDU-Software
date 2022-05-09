@@ -30,6 +30,7 @@ for(let i = 0; i < count; i++){
         console.log(i);
         let p_height = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
         let p_top = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
+        console.log(p_height+p_top);
         canvas.style.top = `${p_height+p_top+25}px`;
     }
     //Row 4
@@ -37,6 +38,7 @@ for(let i = 0; i < count; i++){
         console.log(i);
         let p_height = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
         let p_top = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
+        console.log(p_height+p_top);
         canvas.style.top = `${p_height+p_top+25}px`;
     }
     document.body.appendChild(canvas);
