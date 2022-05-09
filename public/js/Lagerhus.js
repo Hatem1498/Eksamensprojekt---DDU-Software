@@ -22,23 +22,21 @@ for(let i = 0; i < count; i++){
     if(i > 3 && i < 8){
         console.log(i);
         let p_height = parseInt(document.getElementById(`box-${0}`).style.height.replace("px", ""));
-        let p_top = parseInt(document.getElementById(`box-${0}`).style.height.replace("px", ""));
+        let p_top = parseInt(document.getElementById(`box-${0}`).style.top.replace("px", ""));
         canvas.style.top = `${p_height+p_top+25}px`;
     }
     //Row 3
     else if(i > 7 && i < 12){
         console.log(i);
         let p_height_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
-        let p_top_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
-        console.log(p_top_1);
+        let p_top_1 = parseInt(document.getElementById(`box-${4}`).style.top.replace("px", ""));
         canvas.style.top = `${p_height_1+p_top_1+25}px`;
     }
     //Row 4
     else if(i > 11 && i < 16){
         console.log(i);
         let p_height_2 = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
-        let p_top_2 = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
-        console.log(p_height_2+p_top_2);
+        let p_top_2 = parseInt(document.getElementById(`box-${8}`).style.top.replace("px", ""));
         canvas.style.top = `${p_height_2+p_top_2+25}px`;
     }
     document.body.appendChild(canvas);
