@@ -19,19 +19,19 @@ for(let i = 0; i < count; i++){
     canvas.style.height = `${Math.ceil(w/4-20*6-50)}px`;
     canvas.style.top = "75px";
     //Row 2
-    if(i > 3){
+    if(i > 3 && i <= 7){
         let p_height = parseInt(document.getElementById(`box-${0}`).style.height.replace("px", ""));
         let p_top = parseInt(document.getElementById(`box-${0}`).style.height.replace("px", ""));
         canvas.style.top = `${p_height+p_top+25}px`;
     }
     //Row 3
-    if(i > 7){
+    if(i > 7 && i <= 11){
         let p_height = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
         let p_top = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
         canvas.style.top = `${p_height+p_top+25}px`;
     }
     //Row 4
-    if(i > 11){
+    if(i > 11 && i <= 15){
         let p_height = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
         let p_top = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
         canvas.style.top = `${p_height+p_top+25}px`;
