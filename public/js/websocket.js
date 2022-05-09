@@ -15,7 +15,6 @@ function websocket(){
     if(document.URL.includes("Graphs.html")){
         setInterval(()=>{
             ws.send("fetch");
-            ws.close();
         }, 10000);
     }
 
