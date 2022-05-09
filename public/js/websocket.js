@@ -31,10 +31,10 @@ ws.onmessage = (event) => {
         for(obj in json){
             temp.push(json[obj].temp);
             hum.push(json[obj].hum);
-            let date = parseFloat((((new Date(json[obj].date_time)).getTime())-refpoint)/60000);
+            let date = parseFloat((((new Date(json[obj].date_time)).getTime())-refpoint)/60000).toFixed(2);
             console.log(date);
             let date_time = Math.ceil(date);
-            time.push(date_time);
+            time.push(date);
         }
         updateChart(temp, hum, time);
     }
