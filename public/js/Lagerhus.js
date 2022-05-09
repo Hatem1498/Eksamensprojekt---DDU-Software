@@ -1,5 +1,5 @@
 let element = document.getElementById('box-1')
-let x = 0; let y = 0
+let x = 117; let y = 0
 
 const position = { x: 117, y: 0 }
 
