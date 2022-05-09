@@ -11,7 +11,7 @@ function websocket(){
         }
         
     }
-    setTimeout(()=> {ws.close()}, 5000);
+    
     if(document.URL.includes("Graphs.html")){
         setInterval(()=>{
             ws.send("fetch");
@@ -39,7 +39,7 @@ function websocket(){
         
     };
 
-
+    setTimeout(()=> {ws.close()}, 5000);
     ws.onclose = ()=>{
         console.log("Connection closed...Restarting");
         setTimeout(()=>{
