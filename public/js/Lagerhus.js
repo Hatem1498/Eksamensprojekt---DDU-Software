@@ -22,26 +22,26 @@ for(let i = 0; i < count; i++){
     canvas.style.width = `${(w/4-40)}px`;
     canvas.style.height = `${(w/4-40)/2-50}px`;
     canvas.style.top = "75px";
-    //second row top is the sum of previous row height and top and aditional 125 to create space between them
+    //second row top is the sum of previous row height and top and aditional 100 to create space between them
     if(i > 3 && i < 8){
         console.log(i);
         let p_height = parseFloat(document.getElementById(`shelf-${0}`).style.height.replace("px", ""));
         let p_top = parseFloat(document.getElementById(`shelf-${0}`).style.top.replace("px", ""));
-        canvas.style.top = `${p_height+p_top+125}px`;
+        canvas.style.top = `${p_height+p_top+100}px`;
     }
     //third row, same idea as before
     else if(i > 7 && i < 12){
         console.log(i);
         let p_height_1 = parseFloat(document.getElementById(`shelf-${4}`).style.height.replace("px", ""));
         let p_top_1 = parseFloat(document.getElementById(`shelf-${4}`).style.top.replace("px", ""));
-        canvas.style.top = `${p_height_1+p_top_1+125}px`;
+        canvas.style.top = `${p_height_1+p_top_1+100}px`;
     }
     //fourth row
     else if(i > 11 && i < 16){
         console.log(i);
         let p_height_2 = parseFloat(document.getElementById(`shelf-${8}`).style.height.replace("px", ""));
         let p_top_2 = parseFloat(document.getElementById(`shelf-${8}`).style.top.replace("px", ""));
-        canvas.style.top = `${p_height_2+p_top_2+125}px`;
+        canvas.style.top = `${p_height_2+p_top_2+100}px`;
     }
     //Finally append the canvas element into the body element of html
     document.body.appendChild(canvas);
