@@ -24,6 +24,7 @@ ws.onmessage = (event) => {
 
     //If data from the event is a Json, then the temp and hum are updated for the chart, since the Json would contain data stored in the database from the sensors.
     if(isJson(event.data)){
+        console.log("Data Recieved");
         let time = [];
         let temp = [];
         let hum = [];
