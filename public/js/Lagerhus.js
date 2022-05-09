@@ -5,11 +5,11 @@ for(let i = 0; i < count; i++){
     let canvas = document.createElement('canvas');
     canvas.id = `box-${i}`;
     if(i == 0){
-        canvas.style.left = "0px";
+        canvas.style.left = "20px";
     }
     canvas.className = "shelf";
     let w = $(window).width();
-    canvas.style.width = `${w/4-10}px`;
+    canvas.style.width = `${w/4-20*6}px`;
     canvas.style.height = `${Math.ceil(w/4-50)}px`;
     canvas.style.top = "25px";
     if(i > 0){
