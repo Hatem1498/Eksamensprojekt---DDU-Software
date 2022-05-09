@@ -34,6 +34,7 @@ function CheckOrigin(ws, data){
         //Sensor communicates the message "sensor", and the server adds that websocket into an array of ws sensors.
         if(data == "sensor"){
         ws_sensor.push(ws);
+        ws.send("hello!");
         console.log("Sensor: Pushed");
     }
 
