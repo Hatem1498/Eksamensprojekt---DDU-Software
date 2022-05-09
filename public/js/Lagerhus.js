@@ -4,7 +4,7 @@ let x = 0; let y = 0
 for(let i = 0; i < count; i++){
     let canvas = document.createElement('canvas');
     canvas.id = `box-${i}`;
-    canvas.style.position = "relative";
+    canvas.style.position = "absolute";
     if(i == 0 || i == 4 || i == 8 || i == 12){
         canvas.style.left = "20px";
     } 
