@@ -1,4 +1,6 @@
 let element = document.getElementById('box-1')
 let x = 0; let y = 0
 
-interact(element).draggable({modifiers:[interact.modifiers.snap({targets:[interact.snappers.grid({x:1280,y:1280})],range:Infinity,relativePoints:[{x:0,y:0}]}),interact.modifiers.restrict({restriction:element.parentNode,elementRect:{top:0,left:0,bottom:1,right:1},endOnly:true})],inertia:true}).on('dragmove',function(event){x+=event.dx; y+=event.dy; event.target.style.transform='translate('+x+'px, '+y+'px)'})
+const position = { x: 0, y: 0 }
+
+interact(element).draggable({listeners:{start(event){console.log(event.type,event.target)},move(event){position.x+=event.dx;position.y+=event.dy;event.target.style.transform=`translate(${position.x}px,${position.y}px)`},}})
