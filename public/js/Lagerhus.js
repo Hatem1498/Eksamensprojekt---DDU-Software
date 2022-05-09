@@ -4,7 +4,7 @@ let x = 0; let y = 0
 let w = $(window).width();
 
 element.style.width = `${w/4-10}px`;
-element.style.height = `${w/4}px`;
+element.style.height = `${w/4-50}px`;
 
 const position = { x: 0, y: 0 }
 
