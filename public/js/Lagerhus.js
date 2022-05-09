@@ -27,8 +27,6 @@ for(let i = 0; i < count; i++){
     if(i > 11){
         canvas.style.top = "150px";
     }
-    canvas.style.position = "relative";
-   
     document.body.appendChild(canvas);
     /* interact(canvas).draggable({listeners:{start(event){console.log(event.type,event.target)},move(event){position.x+=event.dx;position.y+=event.dy;event.target.style.transform=`translate(${position.x}px,${position.y}px)`},}}) */
 }
