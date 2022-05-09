@@ -36,6 +36,7 @@ function CheckOrigin(ws, data){
         ws_sensor.push(ws);
         ws.send("hello!");
         console.log("Sensor: Pushed");
+        console.log(ws_sensor);
     }
 
     //Same for the website ws
@@ -93,7 +94,7 @@ async function HandleRequest(ws, data){
     if(j !== -1 && data != "fetch"){
        console.log("Sending config to sensors");
        for(sensor in ws_sensor){
-           console.log(sensor);
+           console.log(ws_sensor);
            sensor.send(data);
        }
     }
