@@ -13,7 +13,7 @@ for(let i = 0; i < count; i++){
         let p_width = parseFloat(document.getElementById(`box-${i-1}`).style.width.replace("px", ""));
         canvas.style.left = `${(p_left+20)+p_width}px`;
     }
-    canvas.style.width = `${w/4-20*6}px`;
+    canvas.style.width = `${w/4-20*5-100}px`;
     canvas.style.height = `${Math.ceil(w/4-20*6-50)}px`;
     canvas.style.top = "75px";
     //Row 2
