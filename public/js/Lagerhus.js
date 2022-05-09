@@ -30,7 +30,7 @@ for(let i = 0; i < count; i++){
         console.log(i);
         let p_height_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
         let p_top_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
-        console.log(p_height_1+p_top_1);
+        console.log(p_top_1);
         canvas.style.top = `${p_height_1+p_top_1+25}px`;
     }
     //Row 4
