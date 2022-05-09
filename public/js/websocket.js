@@ -9,6 +9,7 @@ function websocket(){
         if(document.URL.includes("Graphs.html")){
             ws.send("fetch");
         }
+        setTimeout(()=> {ws.close()}, 3000);
     }
 
     if(document.URL.includes("Graphs.html")){
@@ -47,7 +48,7 @@ function websocket(){
     };
 }
 
-setTimeout(()=> {ws.close()}, 2000)
+
 
 
 
