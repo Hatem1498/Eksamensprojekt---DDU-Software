@@ -31,8 +31,8 @@ ws.onmessage = (event) => {
         for(obj in json){
             temp.push(json[obj].temp);
             hum.push(json[obj].hum);
-            let date_time = parseInt((((new Date(json[obj].date_time)).getTime())-refpoint)/60000);
-            let test = parseFloat((((new Date(json[obj].date_time)).getTime())-refpoint)/60000);
+            let date = parseFloat((((new Date(json[obj].date_time)).getTime())-refpoint)/60000);
+            let date_time = Math.ceil(test);
             console.log(test);
             time.push(date_time);
         }
