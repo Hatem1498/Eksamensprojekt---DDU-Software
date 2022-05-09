@@ -34,12 +34,13 @@ function websocket(){
                 time.push(date_time);
             }
             updateChart(temp, hum, time);
+            setTimeout(()=> {ws.close()}, 5000);
             
         }
         
     };
 
-    setTimeout(()=> {ws.close()}, 5000);
+    
     ws.onclose = ()=>{
         console.log("Connection closed...Restarting");
         setTimeout(()=>{
