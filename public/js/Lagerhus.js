@@ -19,7 +19,7 @@ for(let i = 0; i < count; i++){
         canvas.style.left = `${(p_left+20)+p_width}px`;
     }
     //canvas width is the window width/4, and -20*5 to account for the gaps between the shelfs
-    canvas.style.width = `${(w/4)-(20*5)}px`;
+    canvas.style.width = `${(w/4)}px`;
     canvas.style.height = `${(w/4)-(20*5-50)}px`;
     canvas.style.top = "75px";
     //second row top is the sum of previous row height and top and aditional 125 to create space between them
