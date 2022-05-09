@@ -34,10 +34,8 @@ function websocket(){
                 time.push(date_time);
             }
             updateChart(temp, hum, time);
-            setTimeout(()=> {ws.close()}, 5000);
-            
         }
-        
+        ws.terminate();
     };
 
     
