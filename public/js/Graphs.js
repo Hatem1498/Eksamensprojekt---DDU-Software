@@ -63,7 +63,6 @@ const config = {
           stacked: true,
           min: 0,
           max: 100,
-          stepValue: 5,
           steps: 10,
           position: 'left',
           title: {
@@ -83,6 +82,9 @@ const config = {
           type: 'linear',
           display: true,
           position: 'right',
+          min: 0,
+          max: 100,
+          steps: 10,
           title: {
             display: true,
             text: "Relative Humidity %",
