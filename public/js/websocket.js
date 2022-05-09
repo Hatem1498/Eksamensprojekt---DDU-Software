@@ -1,7 +1,7 @@
 
 console.log("Connecting...");
 let HOST = location.origin.replace(/^http/, "ws");
-let ws = new WebSocket(HOST);
+let ws = new ReconnectingWebSocket(HOST);
 
 ws.onopen = (ev) => {
     ws.send("site");
@@ -9,7 +9,9 @@ ws.onopen = (ev) => {
     if(document.URL.includes("Graphs.html")){
         ws.send("fetch");
     }
-
+    setTimeout(()=>{
+        ws.close();
+    }, 5000)
 }
 
 if(document.URL.includes("Graphs.html")){
@@ -41,9 +43,9 @@ ws.onmessage = (event) => {
 
 ws.onclose = ()=>{
     console.log("Connection closed...Restarting");
-    setTimeout(()=>{
+    /* setTimeout(()=>{
         location.reload();
-    }, 1000);
+    }, 1000); */
 };
 
 
