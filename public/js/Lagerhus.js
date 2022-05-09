@@ -26,18 +26,15 @@ for(let i = 0; i < count; i++){
         canvas.style.top = `${p_height+p_top+25}px`;
     }
     //Row 3
-    if(i > 7 && i < 12){
+    else if(i > 7 && i < 12){
         console.log(i);
-        setTimeout(()=>{
         let p_height_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
         let p_top_1 = parseInt(document.getElementById(`box-${4}`).style.height.replace("px", ""));
         console.log(p_height_1+p_top_1);
         canvas.style.top = `${p_height_1+p_top_1+25}px`;
-        }, 2000);
-        
     }
     //Row 4
-    if(i > 11 && i < 16){
+    else if(i > 11 && i < 16){
         console.log(i);
         let p_height_2 = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
         let p_top_2 = parseInt(document.getElementById(`box-${8}`).style.height.replace("px", ""));
