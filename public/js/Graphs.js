@@ -65,7 +65,7 @@ const config = {
             suggestedMax: 100,
             stepValue: 5,
             steps: 10
-          }
+          },
           position: 'left',
           title: {
             display: true,
