@@ -13,7 +13,7 @@ for(let i = 0; i < count; i++){
     canvas.style.height = `${Math.ceil(w/4-20*6-50)}px`;
     canvas.style.top = "75px";
     canvas.style.position = "relative";
-    canvas.style.display = "flex";
+    canvas.style.display = "block";
     if(i > 0){
     let pre = parseInt(document.getElementById(`box-${i-1}`).style.left.replace("px", ""));
     canvas.style.left = `${pre+20}px`
