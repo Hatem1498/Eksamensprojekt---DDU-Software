@@ -33,7 +33,7 @@ ws.onmessage = (event) => {
             hum.push(json[obj].hum);
             let date = parseFloat((((new Date(json[obj].date_time)).getTime())-refpoint)/60000);
             console.log(date);
-            let date_time = Math.ceil(test);
+            let date_time = Math.ceil(date);
             time.push(date_time);
         }
         updateChart(temp, hum, time);
