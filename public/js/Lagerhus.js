@@ -1,6 +1,5 @@
 let count = 16;
-const position = { x: 0, y: 0 }
-let x = 0; let y = 0
+const w = $(window).width();
 for(let i = 0; i < count; i++){
     let canvas = document.createElement('canvas');
     canvas.id = `box-${i}`;
@@ -14,7 +13,6 @@ for(let i = 0; i < count; i++){
         let p_width = parseFloat(document.getElementById(`box-${i-1}`).style.width.replace("px", ""));
         canvas.style.left = `${(p_left+20)+p_width}px`;
     }
-    let w = $(window).width();
     canvas.style.width = `${w/4-20*6}px`;
     canvas.style.height = `${Math.ceil(w/4-20*6-50)}px`;
     canvas.style.top = "75px";
@@ -40,17 +38,5 @@ for(let i = 0; i < count; i++){
         canvas.style.top = `${p_height_2+p_top_2+25}px`;
     }
     document.body.appendChild(canvas);
-    /* interact(canvas).draggable({listeners:{start(event){console.log(event.type,event.target)},move(event){position.x+=event.dx;position.y+=event.dy;event.target.style.transform=`translate(${position.x}px,${position.y}px)`},}}) */
+    
 }
-
-let element = document.getElementById('box-1');
-
-
-
-
-
-
-
-
-
-element.addEventListener('click', ()=>{console.log(`top: ${element.style.top}, left: ${element.style.left} `)})
