@@ -6,11 +6,11 @@ function configure(event){
     let v_ssid = document.querySelector("#ssid").value;
     let v_password = document.querySelector("#password").value;
     let v_sensor_1 = document.querySelector("#t_sensor_1").value;
-    data = {ssid: v_ssid, password: v_password, t_sensor_1: v_sensor_1};
+    let data = {ssid: v_ssid, password: v_password, t_sensor_1: v_sensor_1};
     
     data = SortObject(data);
-    
-    ws.send(Object.values(data));
+    console.log(data)
+    /* ws.send(Object.values(data)); */
 }
 
 function SortObject(obj){
