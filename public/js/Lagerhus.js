@@ -81,7 +81,7 @@ for(let i = 0; i < 4; i++){
     }
 }
 
-const shelfs = document.querySelector(".shelf");
+const shelfs = document.querySelectorAll(".shelf");
 
 shelfs.forEach(shelf => {
     console.log(shelf.id);
