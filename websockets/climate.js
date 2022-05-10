@@ -2,7 +2,7 @@ const m = require("../database.js");
 
 let insert = m.insert;
 let fetchData = m.fetch;
-
+let update = m.update
 
 let ws_site = [];
 let ws_sensor = [];
@@ -89,7 +89,7 @@ async function HandleRequest(ws, data){
     }
 
     if(j != -1 && data != "site"){
-        
+        update(data, "sensor-1");
     }
 
     //Send data to sensors
