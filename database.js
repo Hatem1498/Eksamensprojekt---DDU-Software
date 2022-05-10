@@ -11,16 +11,21 @@ const pool = new Pool({
 
 module.exports = {
 
-insert: async function database(temp, hum){
-        // Check value in query string
+insert: async function database(value_1, value_2, tabel){
         
-        console.log("data function called");
-
-        // Prepare query for database
-        const query = {
+    let query;
+        if(tabel == "climate"){
+         query = {
             text: "INSERT INTO climate (temp, hum) VALUES ($1, $2)",
-            values: [temp, hum],
+            values: [value_1, value_2],
         };
+    }
+    if(tabel == "shelfs"){
+         query = {
+            text: "INSERT INTO shelfs (shelf, cheese) VALUES ($1, $2)",
+            values: [value_1, value_2],
+        };
+    }
         try{
         // Wait for database connection
         const client = await pool.connect();
@@ -83,70 +88,6 @@ fetch: async function fetchData(tabel){
             console.log(err);
         }    
     },
-
-    insertShelf: async function shelf(name, cheese){
-        
-        // Prepare query for database
-        const query = {
-            text: "INSERT INTO shelfs (shelf, cheese) VALUES ($1, $2)",
-            values: [name, cheese],
-        };
-        try{
-        // Wait for database connection
-        const client = await pool.connect();
-        
-        client
-            // Send query to database
-            .query(query)
-
-            // Handle results 
-            .then(() => {
-            
-            })
-
-            // Handle errors
-            .catch((err) => {
-                console.error(err);
-            })
-
-
-            // Close connection
-            .finally(() => {client.release()
-            });
-        }
-        catch(err){
-            console.log(err);
-        }
-
-    },
     
-    fetch_2: async function fetchShelf(){
-        const query = "SELECT * FROM shelfs";
-        try{
-            const client = await pool.connect();
-
-            client
-                .query(query)
-            
-                .then((result) => {
-                    module.exports.shelfs = JSON.stringify(result.rows);
-                })
-                // Handle errors
-            .catch((err) => {
-                console.error(err);
-            })
-
-
-            // Close connection
-            .finally(() => {client.release()
-                
-            });
-            
-        }
-        catch(err){
-            console.log(err);
-        }    
-    }
-
 };
 

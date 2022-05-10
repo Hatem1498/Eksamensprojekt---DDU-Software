@@ -1,6 +1,6 @@
 const m = require("../database.js");
 
-let database = m.insert;
+let insert = m.insert;
 let fetchData = m.fetch;
 
 
@@ -74,7 +74,7 @@ async function HandleRequest(ws, data){
         let hum = values[1];
         console.log("Inserting Data Into climate");
         //database function sends query to database with the data. 
-        await database(temp, hum);
+        await insert(temp, hum, "climate");
     }
 
     //Fetch data from climate tabel

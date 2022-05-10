@@ -1,12 +1,12 @@
 const m = require("../database.js");
 
-let insert = m.insertShelf;
+let insert = m.insert;
 let fetch = m.fetch;
 
 
 function websocket_2(wss2) {
     wss2.on("connection", (ws) => {
-        
+
         ws.on("message", (data) => {
             SortData(ws, data);
             
@@ -22,5 +22,5 @@ async function SortData(ws, data){
     let shelf = values[0];
     let cheese = values[1];
     console.log(cheese);
-    insert(shelf, cheese);
+    insert(shelf, cheese, "shelfs");
 }
