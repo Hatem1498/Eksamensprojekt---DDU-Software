@@ -1,4 +1,3 @@
-
 //Previous solution
 /* let count = 16;
 const w = $(window).width();
@@ -47,13 +46,10 @@ for(let i = 0; i < count; i++){
     }
     //Finally append the canvas element into the body element of html
     document.body.appendChild(canvas);
-    
 } */
 
 const w = $(window).width();
-
 for(let i = 0; i < 4; i++){
-    
     for(let j = 0; j < 4; j++){
         let canvas = document.createElement('canvas');
         //The canvas element id is the position in current row (j) + (i*4) to account for previous rows. 
@@ -82,5 +78,4 @@ for(let i = 0; i < 4; i++){
         //Finally append canvas into html body
         document.body.appendChild(canvas);
     }
-    
 }
