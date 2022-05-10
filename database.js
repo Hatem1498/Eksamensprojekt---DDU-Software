@@ -92,6 +92,7 @@ fetch: async function fetchData(tabel){
     update: async function update(info, sensor){
         
         let query = `UPDATE sensors SET info = '${info}' WHERE sensor = ${sensor}`
+        console.log(query);
             try{
             // Wait for database connection
             const client = await pool.connect();
