@@ -54,6 +54,7 @@ for(let i = 0; i < 4; i++){
         let canvas = document.createElement('canvas');
         //The canvas element id is the position in current row (j) + (i*4) to account for previous rows. 
         canvas.id = `shelf-${j+(i*4)}`;
+        //All canvases get same className to make it easier to select them all in js and css
         canvas.className = "shelf";
         canvas.style.position = "absolute";
         //If the shelf is at the start of a row, set left to 20px
@@ -79,3 +80,9 @@ for(let i = 0; i < 4; i++){
         document.body.appendChild(canvas);
     }
 }
+
+const shelfs = document.querySelector(".shelf");
+
+shelfs.forEach(shelf => {
+    console.log(shelf.id);
+});
