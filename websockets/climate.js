@@ -74,13 +74,13 @@ async function HandleRequest(ws, data){
         let hum = values[1];
         console.log("Inserting Data Into climate");
         //database function sends query to database with the data. 
-        database(temp, hum);
+        await database(temp, hum);
     }
 
     //Fetch data from climate tabel
     if(j != -1 && data == "fetch"){
         console.log("fetching data...");
-        fetchData("climate");
+        await fetchData("climate");
         console.log("data fetched!");
         setTimeout(()=>{
             let result = m.results;

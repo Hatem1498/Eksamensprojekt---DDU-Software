@@ -6,11 +6,7 @@ let fetch = m.fetch;
 
 function websocket_2(wss2) {
     wss2.on("connection", (ws) => {
-        fetch("shelfs");
-        setTimeout(()=>{
-            let result = m.results;
-            ws.send(result)
-        }, 100);
+        
         ws.on("message", (data) => {
             SortData(ws, data);
             
