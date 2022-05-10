@@ -68,14 +68,12 @@ for(let i = 0; i < 4; i++){
             canvas.style.left = `${(p_left+20)+p_width}px`;
         }
         canvas.style.width = `${(w/4-40)}px`;
-        canvas.style.height = `${(w/4-40)/2-50}px`;
+        canvas.style.height = `${(w/4-40)/2-75}px`;
         canvas.style.top = "75px";
         
         if(i > 0){
             let p_height = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.height.replace("px", ""));
             let p_top = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.top.replace("px", ""));
-            console.log(i);
-            console.log(`shelf-${j+((i-1)*4)}`);
             canvas.style.top = `${p_height+p_top+100}px`;
         }
         document.body.appendChild(canvas);
