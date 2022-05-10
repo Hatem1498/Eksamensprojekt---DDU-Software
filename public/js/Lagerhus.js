@@ -70,8 +70,8 @@ for(let i = 0; i < 4; i++){
         canvas.style.top = "75px";
         
         if(i > 0){
-            let p_height = parseFloat(document.getElementById(`shelf-${i-1}`).style.height.replace("px", ""));
-            let p_top = parseFloat(document.getElementById(`shelf-${i-1}`).style.top.replace("px", ""));
+            let p_height = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.height.replace("px", ""));
+            let p_top = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.top.replace("px", ""));
             canvas.style.top = `${p_height+p_top+100}px`;
         }
         document.body.appendChild(canvas);
