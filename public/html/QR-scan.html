@@ -18,7 +18,10 @@
             const HOST_2 = loc + "/data";
             const ws_2 = new ReconnectingWebSocket(HOST_2);
             import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
-            
+            ws_2.onmessage = (event) =>{
+                let json = JSON.parse(event.data);
+                console.log(json);
+            };
             function scan(element, button){
                 let engine = qrScanner.createQrEngine(qrScanner.WORKER_PATH);
                 qrScanner.scanImage(element, { returnDetailedScanResult: true, qrEngine: engine})
