@@ -34,7 +34,7 @@ body {
     padding: 0;
 }
 
-.navbar_links li {
+.navbar_links li, #dropdown_btn {
     list-style: none;
     transition: background-color 0.5s;
 }
@@ -45,7 +45,7 @@ body {
     padding: 1rem;
 }
 
-.navbar_links li:hover {
+.navbar_links li, #dropdown_btn:hover {
     background-color: #555;
 }
 
