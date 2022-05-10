@@ -86,14 +86,16 @@ async function HandleRequest(ws, data){
             let result = m.results;
             ws.send(result);
         }, 50);
-        
+    }
+
+    if(j != -1 && data != "site"){
         
     }
 
     //Send data to sensors
-    if(j !== -1 && data != "fetch" && data != "site" && data != "sensor"){
-       console.log("Sending config to sensors");
-       ws_sensor[0].send(data);
+    if(i !== -1 && data == "config"){
+       console.log("Sending config to sensor");
+       
     }
 
 }

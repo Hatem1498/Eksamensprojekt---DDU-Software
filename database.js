@@ -89,5 +89,36 @@ fetch: async function fetchData(tabel){
         }    
     },
     
+    update: async function update(info, sensor){
+        
+        let query = `UPDATE sensors SET info = ${info} WHERE sensor = '${sensor}'`
+            try{
+            // Wait for database connection
+            const client = await pool.connect();
+            
+            client
+                // Send query to database
+                .query(query)
+    
+                // Handle results 
+                .then(() => {
+                
+                })
+    
+                // Handle errors
+                .catch((err) => {
+                    console.error(err);
+                })
+    
+    
+                // Close connection
+                .finally(() => {client.release()
+                });
+            }
+            catch(err){
+                console.log(err);
+            }
+    
+        },
 };
 
