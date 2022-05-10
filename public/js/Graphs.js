@@ -1,5 +1,3 @@
-
-
 let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");
 
@@ -38,7 +36,7 @@ const config = {
       plugins: {
         title: {
           display: true,
-          text: 'Temperature and Relative Humidity as function of time'
+          text: 'Temperature and Relative Humidity as a function of time'
         }
       },
       scales: {

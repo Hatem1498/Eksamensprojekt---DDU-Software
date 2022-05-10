@@ -2,8 +2,6 @@ const form = document.getElementsByClassName("Konfig")[0];
 
 form.addEventListener("submit", configure);
 
-
-
 function configure(event){
     let v_ssid = document.querySelector("#ssid").value;
     let v_password = document.querySelector("#password").value;
@@ -15,8 +13,6 @@ function configure(event){
     ws.send(Object.values(data));
 }
 
-
-
 function SortObject(obj){
    let n_obj = {};
     for(key in obj){
@@ -26,5 +22,3 @@ function SortObject(obj){
     }
     return n_obj;
 }
-
-
