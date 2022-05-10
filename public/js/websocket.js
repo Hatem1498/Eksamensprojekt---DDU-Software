@@ -26,8 +26,7 @@ ws.onmessage = (event) => {
         let time = [];
         let temp = [];
         let hum = [];
-        let json = event.data;
-        console.log(json);
+        let json = JSON.parse(event.data);
         let refpoint = (new Date((json.filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
         for(obj in json){
             temp.push(json[obj].temp);
