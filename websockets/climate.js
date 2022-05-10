@@ -85,7 +85,7 @@ async function HandleRequest(ws, data){
         setTimeout(()=>{
             let result = m.results;
             ws.send(result);
-        }, 500);
+        }, 50);
         
         
     }

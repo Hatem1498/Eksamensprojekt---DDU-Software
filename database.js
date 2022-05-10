@@ -51,12 +51,12 @@ insert: async function database(temp, hum){
     },
 
 fetch: async function fetchData(tabel){
-        
+    const query = 0;
     if(tabel == "climate"){
-        const query = "SELECT * FROM climate";
+        query = "SELECT * FROM climate";
     }
     if(tabel == "shelfs"){
-        const query = "SELECT * FROM shelfs";
+        query = "SELECT * FROM shelfs";
     }
         try{
             const client = await pool.connect();
