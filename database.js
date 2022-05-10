@@ -51,7 +51,7 @@ insert: async function database(temp, hum){
     },
 
 fetch: async function fetchData(tabel){
-    const query = 0;
+    let query = 0;
     if(tabel == "climate"){
         query = "SELECT * FROM climate";
     }
