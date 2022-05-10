@@ -1,3 +1,5 @@
+
+//Previous solution
 /* let count = 16;
 const w = $(window).width();
 for(let i = 0; i < count; i++){
@@ -72,6 +74,7 @@ for(let i = 0; i < 4; i++){
         if(i > 0){
             let p_height = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.height.replace("px", ""));
             let p_top = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.top.replace("px", ""));
+            console.log(`shelf-${j+((i-1)*4)}`);
             canvas.style.top = `${p_height+p_top+100}px`;
         }
         document.body.appendChild(canvas);
