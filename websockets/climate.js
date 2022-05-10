@@ -80,10 +80,10 @@ async function HandleRequest(ws, data){
     //Fetch data from climate tabel
     if(j != -1 && data == "fetch"){
         console.log("fetching data...");
-        await fetchData();
+        await fetchData("climate");
         console.log("data fetched!");
         setTimeout(()=>{
-            let result = m.climate;
+            let result = m.results;
             ws.send(result);
         }, 50);
         

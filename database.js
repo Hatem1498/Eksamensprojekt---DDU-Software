@@ -50,9 +50,14 @@ insert: async function database(temp, hum){
 
     },
 
-fetch: async function fetchData(){
+fetch: async function fetchData(tabel){
         
+    if(tabel == "climate"){
         const query = "SELECT * FROM climate";
+    }
+    if(tabel == "shelfs"){
+        const query = "SELECT * FROM shelfs";
+    }
         try{
             const client = await pool.connect();
 
@@ -60,8 +65,7 @@ fetch: async function fetchData(){
                 .query(query)
             
                 .then((result) => {
-                    /* console.log(JSON.stringify(result.rows)); */
-                    module.exports.climate = JSON.stringify(result.rows);
+                    module.exports.results = JSON.stringify(result.rows);
                 })
                 // Handle errors
             .catch((err) => {
