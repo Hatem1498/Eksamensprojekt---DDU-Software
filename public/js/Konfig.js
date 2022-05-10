@@ -9,7 +9,7 @@ function configure(event){
     let data = {ssid: v_ssid, password: v_password, t_sensor_1: v_sensor_1};
     
     data = SortObject(data);
-    window.alert(data);
+    window.alert(String(data));
     /* ws.send(Object.values(data)); */
 }
 
