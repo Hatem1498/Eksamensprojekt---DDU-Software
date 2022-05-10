@@ -6,7 +6,11 @@ let fetch = m.fetch;
 
 function websocket_2(wss2) {
     wss2.on("connection", (ws) => {
-        
+        fetch("shelfs");
+        setTimeout(()=>{
+            let result = m.results;
+            ws.send(result)
+        }, 100);
         ws.on("message", (data) => {
             SortData(ws, data);
             
@@ -22,10 +26,5 @@ async function SortData(ws, data){
     let shelf = values[0];
     let cheese = values[1];
     console.log(cheese);
-    await insert(shelf, cheese);
-    fetch("shelfs");
-    setTimeout(()=>{
-        let result = m.results;
-        ws.send(result);
-    }, 100)
+    insert(shelf, cheese);
 }
