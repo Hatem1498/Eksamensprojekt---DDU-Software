@@ -16,7 +16,7 @@
         <script type = "module" defer>
             const loc = location.origin.replace(/^http/, "ws");
             const HOST_2 = loc + "/data";
-            const ws_2 = new WebSocket(HOST_2);
+            const ws_2 = new ReconnectingWebSocket(HOST_2);
             import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
 
             function scan(element, button){
@@ -35,7 +35,7 @@
                     else if(button.id == "QR-2"){
                         if(window.confirm(`Decoded QR: ${result} \n Press "OK" to send data to the server`)){
                             let data = `${result},${cheese}`;
-                            ws.send(data);
+                            ws_2.send(data);
                         }
                     }
                 })
