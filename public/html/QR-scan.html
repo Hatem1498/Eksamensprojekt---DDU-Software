@@ -20,7 +20,7 @@
             import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
             
             function scan(element, button){
-                qrScanner.scanImage(element)
+                qrScanner.scanImage(element, { returnDetailedScanResult: true })
                 .then(function(result){  
                     console.log(result);
                     element.srcObject.getTracks().forEach(function(track){track.stop()});
