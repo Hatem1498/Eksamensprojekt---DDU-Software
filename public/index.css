@@ -59,6 +59,7 @@ body {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+    transition: background-color 0.5s;
 }
 
 .burgermenu_btn {
