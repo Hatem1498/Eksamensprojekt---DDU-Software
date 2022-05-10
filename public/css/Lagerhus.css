@@ -1,8 +1,4 @@
 .shelf {
-    position: relative;
     background-color: #29e;
     color: #fff;
-    touch-action: none;
-    top: 0px;
-    left: 117px;
   }
