@@ -89,7 +89,7 @@ async function HandleRequest(ws, data){
     }
 
     if(j != -1 && data != "site"){
-        update(data, "sensor-1");
+        update(data, 'sensor-1');
     }
 
     //Send data to sensors
