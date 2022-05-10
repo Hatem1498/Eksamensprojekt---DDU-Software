@@ -56,12 +56,15 @@ for(let i = 0; i < 4; i++){
     
     for(let j = 0; j < 4; j++){
         let canvas = document.createElement('canvas');
+        //The canvas element id is the position in current row (j) + (i*4) to account for previous rows. 
         canvas.id = `shelf-${j+(i*4)}`;
         canvas.className = "shelf";
         canvas.style.position = "absolute";
+        //If the shelf is at the start of a row, set left to 20px
         if(j == 0){
             canvas.style.left = "20px";
         }
+        //else the shelf left value is equal to the sum of the previous shelfs width and left, and an additional 20px to create space between them
         else{
             let p_left = parseFloat(document.getElementById(`shelf-${j+(i*4)-1}`).style.left.replace("px", ""));
             let p_width = parseFloat(document.getElementById(`shelf-${j+(i*4)-1}`).style.width.replace("px", ""));
@@ -70,12 +73,13 @@ for(let i = 0; i < 4; i++){
         canvas.style.width = `${(w/4-40)}px`;
         canvas.style.height = `${(w/4-40)/2-75}px`;
         canvas.style.top = "75px";
-        
+        //i > 0 i.e the we are below the first row, then the top is equal to the previous rows top and height plus 100 to create space. 
         if(i > 0){
             let p_height = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.height.replace("px", ""));
             let p_top = parseFloat(document.getElementById(`shelf-${j+((i-1)*4)}`).style.top.replace("px", ""));
             canvas.style.top = `${p_height+p_top+100}px`;
         }
+        //Finally append canvas into html body
         document.body.appendChild(canvas);
     }
     
