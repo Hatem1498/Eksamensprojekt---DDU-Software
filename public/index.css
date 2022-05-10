@@ -34,7 +34,7 @@ body {
     padding: 0;
 }
 
-.navbar_links li, #dropdown_btn {
+.navbar_links li{
     list-style: none;
     transition: background-color 0.5s;
 }
@@ -45,8 +45,20 @@ body {
     padding: 1rem;
 }
 
-.navbar_links li, #dropdown_btn:hover {
+.navbar_links li:hover {
     background-color: #555;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 0;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
 }
 
 .burgermenu_btn {
