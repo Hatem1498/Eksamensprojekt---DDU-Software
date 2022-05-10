@@ -56,7 +56,7 @@ insert: async function database(value_1, value_2, tabel){
     },
 
 fetch: async function fetchData(tabel){
-    let query = 0;
+    let query;
     if(tabel == "climate"){
         query = "SELECT * FROM climate";
     }
