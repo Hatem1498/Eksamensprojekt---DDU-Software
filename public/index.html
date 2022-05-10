@@ -30,7 +30,16 @@
             
             <div class = "navbar_links">
                 <ul>
-                    <li><a href="/html/Lagerhus.html">Overblik over lagehuset</a></li>
+                    <div class="dropdown" id="dropdown">
+                        <button id = "dropdown_btn" class="dropdown_btn" onclick="drop()">
+                            "Overblik over Lagerhuset "
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class ="dropdown_content" id="drop-content">
+                            <a href="/html/2D.html">2D</a>
+                            <a href="/html/3D.html">3D</a>
+                        </div>
+                    </div>
                     <li><a href="/html/Graphs.html">Grafer</a></li>
                     <li><a href="/html/Konfig.html">Konfigurationer</a></li>
                     <li><a href="/html/QR-scan.html">QR-scanning</a></li>
@@ -54,6 +63,9 @@
                 }
                 }, 200);
             });
+            function drop(){
+                document.getElementById("drop-content").classList.toggle("show");
+            }
             </script>
     </body>
 </html>
