@@ -3,7 +3,7 @@ let ctx = canvas.getContext("2d");
 
 let labels = [0, 1, 2, 3, 4, 5];
 
-const data = {
+const data_info = {
     labels: labels,
     datasets: [
       {
@@ -25,7 +25,7 @@ const data = {
 
 const config = {
     type: 'line',
-    data: data,
+    data: data_info,
     options: {
       responsive: true,
       interaction: {
