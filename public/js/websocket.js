@@ -77,7 +77,7 @@ ws.onclose = ()=>{
 
 
 function HistoryOptions(data){
-    let options = document.querySelectorAll("options");
+    let options = document.querySelectorAll("option");
     options.forEach(option =>{
         option.remove();
     })
