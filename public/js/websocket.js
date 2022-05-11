@@ -32,7 +32,7 @@ if(document.URL.includes("Graphs.html")){
 }
 
 ws.onmessage = (event) => {
-
+    console.log(event.data);
     //If data from the event is a Json, then the temp and hum are updated for the chart, since the Json would contain data stored in the database from the sensors.
     if(!history){
         if(isJson(event.data)){
@@ -58,9 +58,10 @@ ws.onmessage = (event) => {
         }
     }
     else{
-        
-        HistoryOptions(JSON.parse(event.data));
-        
+        let data = JSON.parse(event.data);
+        if(row.data != undefined){
+            HistoryOptions(data);
+        }
         if(select.value != null || select.value != ""){
             getHistory(event.data, select.value);
         }
