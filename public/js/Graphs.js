@@ -28,7 +28,7 @@ const config = {
     type: 'line',
     data: data_info,
     options: {
-      responsive: false,
+      responsive: true,
       interaction: {
         mode: 'index',
         intersect: false,
@@ -114,6 +114,3 @@ function updateChart(temp, hum, label){
   chart.update();
 }
 
-window.addEventListener('beforeprint', () => {
-  chart.resize(window.innerWidth/2, window.innerWidth/2);
-});
