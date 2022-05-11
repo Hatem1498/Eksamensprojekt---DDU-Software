@@ -28,7 +28,7 @@ const config = {
     type: 'line',
     data: data_info,
     options: {
-      responsive: true,
+      responsive: false,
       interaction: {
         mode: 'index',
         intersect: false,
