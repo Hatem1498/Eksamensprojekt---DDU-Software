@@ -89,12 +89,12 @@ function HistoryOptions(data){
 
 }
 
-function getHistory(data, row){
+function getHistory(data_, row){
     let tempData = [];
     let humData = [];
     let time = [];
     //Start date, as time in ms
-    let data = JSON.parse(data);
+    let data = JSON.parse(data_);
     console.log(data);
     console.log(row);
     console.log(data[row]);
