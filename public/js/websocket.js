@@ -3,7 +3,7 @@ let HOST = location.origin.replace(/^http/, "ws");
 let ws = new ReconnectingWebSocket(HOST);
 let select = document.getElementById("select_data");
 let history = false;
-
+let options_create = true;
 ws.onopen = (ev) => {
     ws.send("site");
 
@@ -19,8 +19,11 @@ if(document.URL.includes("Graphs.html")){
         }, 60000);
     }
     select.addEventListener("click", function(){
-        history = true;
-        ws.send("History");
+        if(options_create){
+            history = true;
+            options_create = false;
+            ws.send("History");
+        }
     });
     select.addEventListener("change", function(){
         ws.send("History");
@@ -91,6 +94,7 @@ function getHistory(data, row){
     let humData = [];
     let time = [];
     //Start date, as time in ms
+    console.log(data[row]["data"]);
     let refpoint = (new Date(((data[row]["data"]).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
     
     // Each "r", is a row from the data saved from climate table.
