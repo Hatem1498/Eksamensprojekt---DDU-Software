@@ -91,18 +91,17 @@ function getHistory(data, row){
     let humData = [];
     let time = [];
     //Start date, as time in ms
-    console.log(data);
-    let refpoint = (new Date(((data[row].data).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
-    console.log(refpoint);
+    let refpoint = (new Date(((data[row]["data"]).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
+    
     // Each "r", is a row from the data saved from climate table.
-    for(r of data[row].data){
+    for(r of data[row][data]){
         tempData.push(r.temp);
         humData.push(r.hum);
         //Time in relation to our refpoint, (/1000) convert to s from ms
         let date_time = parseInt((((new Date(r.date_time)).getTime())-refpoint)/60000);
         time.push(date_time);
     }
-    updateChart(tempData, pressureData, time);
+    updateChart(tempData, humData, time);
     
 }
 
