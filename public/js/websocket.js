@@ -94,7 +94,7 @@ function getHistory(data, row){
     let refpoint = (new Date(((data[row]["data"]).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
     
     // Each "r", is a row from the data saved from climate table.
-    for(r of data[row][data]){
+    for(r of data[row]["data"]){
         tempData.push(r.temp);
         humData.push(r.hum);
         //Time in relation to our refpoint, (/1000) convert to s from ms
