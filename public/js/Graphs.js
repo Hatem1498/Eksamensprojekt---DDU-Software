@@ -3,6 +3,9 @@ let ctx = canvas.getContext("2d");
 
 let labels = [0, 1, 2, 3, 4, 5];
 
+canvas.style.width = $(window).width();
+canvas.style.height = ($(window).width()/1.5);
+
 const data_info = {
     labels: labels,
     datasets: [
@@ -27,7 +30,7 @@ const config = {
     type: 'line',
     data: data_info,
     options: {
-      responsive: true,
+      responsive: false,
       interaction: {
         mode: 'index',
         intersect: false,
