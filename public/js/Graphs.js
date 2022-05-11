@@ -115,5 +115,5 @@ function updateChart(temp, hum, label){
 }
 
 window.addEventListener('beforeprint', () => {
-  chart.resize(${window}.width()/2, ${window}.width()/2);
+  chart.resize(window.innerWidth/2, window.innerWidth/2);
 });
