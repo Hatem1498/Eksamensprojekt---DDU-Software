@@ -88,7 +88,7 @@ async function HandleRequest(ws, data){
         }, 50);
     }
 
-    if(j != -1 && data != "site"){
+    if(j != -1 && data != "site" && data != "fetch"){
         update(data, 'sensor-1');
     }
 
