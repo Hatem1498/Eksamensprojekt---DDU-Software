@@ -72,7 +72,7 @@ ws.onclose = ()=>{
 
 function HistoryOptions(data){
 
-    for(row of data.results){
+    for(row of data){
         let size = Object.keys(row.data).length;
         let start = new Date((row.data.filter(obj=>{return obj.id == 1}))[0].date_time);
         let end = new Date((row.data.filter(obj=>{return obj.id == row.data[size-1].id}))[0].date_time);
