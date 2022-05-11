@@ -114,7 +114,7 @@ function getHistory(data_, row){
         tempData.push(r.temp);
         humData.push(r.hum);
         //Time in relation to our refpoint, (/1000) convert to s from ms
-        let date_time = parseInt((((new Date(r.date_time)).getTime())-refpoint)/60000);
+        let date_time = parseFloat((((new Date(r.date_time)).getTime())-refpoint)/60000).toFixed(1);
         time.push(date_time);
     }
     updateChart(tempData, humData, time);
