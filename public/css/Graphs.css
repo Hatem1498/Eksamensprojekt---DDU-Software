@@ -24,7 +24,11 @@
   touch-action: manipulation;
   vertical-align: middle;
   position: relative;
-  left: 100px;
+}
+
+p{
+    position: relative;
+    top: 20px;
 }
 
 .Live:hover,
