@@ -1,4 +1,3 @@
-
 console.log("Connecting...");
 let HOST = location.origin.replace(/^http/, "ws");
 let ws = new ReconnectingWebSocket(HOST);
