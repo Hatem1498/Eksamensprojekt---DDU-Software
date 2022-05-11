@@ -31,6 +31,12 @@
     top: 20px;
 }
 
+select{
+    font-size: larger;
+    width:fit-content;
+    height:fit-content;
+}
+
 .Live:hover,
 .Live:active {
   background-color: initial;
