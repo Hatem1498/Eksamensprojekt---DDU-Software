@@ -24,6 +24,10 @@ if(document.URL.includes("Graphs.html")){
             options_create = false;
             ws.send("History");
         }
+        let options = select.querySelectorAll("option");
+        if(typeof(options.length) == "undefined" || options.length < 2){
+            ws.send("History");
+        }
     });
     select.addEventListener("change", function(){
         ws.send("History");
