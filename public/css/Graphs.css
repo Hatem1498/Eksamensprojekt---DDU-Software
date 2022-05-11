@@ -23,6 +23,8 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   vertical-align: middle;
+  position: relative;
+  left: 30px;
 }
 
 .Live:hover,
