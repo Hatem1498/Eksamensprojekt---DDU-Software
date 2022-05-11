@@ -91,7 +91,7 @@ function getHistory(data, row){
     let humData = [];
     let time = [];
     //Start date, as time in ms
-    console.log(data[row]);
+    console.log(data[row].data);
     let refpoint = (new Date(((data[row].data).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
     console.log(refpoint);
     // Each "r", is a row from the data saved from climate table.
