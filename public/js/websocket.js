@@ -94,6 +94,7 @@ function getHistory(data, row){
     let humData = [];
     let time = [];
     //Start date, as time in ms
+    let data = JSON.parse(data);
     console.log(data);
     console.log(row);
     console.log(data[row]);
