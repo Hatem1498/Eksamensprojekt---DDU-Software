@@ -3,7 +3,7 @@ let HOST = location.origin.replace(/^http/, "ws");
 let ws = new ReconnectingWebSocket(HOST);
 let select = document.getElementById("select_data");
 let history = false;
-let options_create = true;
+
 ws.onopen = (ev) => {
     ws.send("site");
 
@@ -58,9 +58,9 @@ ws.onmessage = (event) => {
         }
     }
     else{
-        if(options_create){
+        
         HistoryOptions(JSON.parse(event.data));
-        }
+        
         if(select.value != null || select.value != ""){
             getHistory(event.data, select.value);
         }
@@ -77,7 +77,10 @@ ws.onclose = ()=>{
 
 
 function HistoryOptions(data){
-
+    let options = document.querySelectorAll("options");
+    options.forEach(option =>{
+        option.remove();
+    })
     for(row of data){
         let size = Object.keys(row.data).length;
         let start = new Date((row.data.filter(obj=>{return obj.id == 1}))[0].date_time);
@@ -89,7 +92,6 @@ function HistoryOptions(data){
         opt.value = (row.id)-1;
         select.appendChild(opt);
     }
-    options_create = false;
 
 }
 
