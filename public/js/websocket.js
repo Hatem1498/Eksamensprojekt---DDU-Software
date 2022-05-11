@@ -19,13 +19,10 @@ if(document.URL.includes("Graphs.html")){
         }, 60000);
     }
     select.addEventListener("click", function(){
-        if(options_create){
-            history = true;
-            options_create = false;
-            ws.send("History");
-        }
+        
         let options = select.querySelectorAll("option");
         if(typeof(options.length) == "undefined" || options.length < 2){
+            history = true;
             ws.send("History");
         }
     });
@@ -61,7 +58,9 @@ ws.onmessage = (event) => {
         }
     }
     else{
+        if(options_create){
         HistoryOptions(JSON.parse(event.data));
+        }
         if(select.value != null || select.value != ""){
             getHistory(event.data, select.value);
         }
@@ -90,6 +89,7 @@ function HistoryOptions(data){
         opt.value = (row.id)-1;
         select.appendChild(opt);
     }
+    options_create = false;
 
 }
 
