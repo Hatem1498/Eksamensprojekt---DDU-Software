@@ -2,7 +2,7 @@ let canvas = document.getElementById("Graph");
 let ctx = canvas.getContext("2d");
 
 let labels = [0, 1, 2, 3, 4, 5];
-
+console.log($(window).width());
 canvas.style.width = $(window).width();
 canvas.style.height = ($(window).width()/1.5);
 
