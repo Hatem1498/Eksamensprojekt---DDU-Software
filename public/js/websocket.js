@@ -14,7 +14,7 @@ ws.onopen = (ev) => {
 if(document.URL.includes("Graphs.html")){
     setInterval(()=>{
         ws.send("fetch");
-    }, 10000);
+    }, 60000);
 }
 
 ws.onmessage = (event) => {
