@@ -131,3 +131,8 @@ function isJson(item) {
 
     return false;
 }
+
+function Live(){
+    history = false;
+    ws.send("climate");
+}
