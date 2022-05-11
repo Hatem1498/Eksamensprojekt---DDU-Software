@@ -48,7 +48,7 @@ insert: async function database(value_1, value_2, tabel){
             // Close connection
             .finally(() => {client.release()
                 if(tabel == "climate"){
-                    this.transfer();
+                    this.transfer
                 }
             });
         }
