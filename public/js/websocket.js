@@ -13,9 +13,11 @@ ws.onopen = (ev) => {
 }
 
 if(document.URL.includes("Graphs.html")){
-    if(!history){
+    
         setInterval(()=>{
+            if(!history){
             ws.send("climate");
+            }
         }, 60000);
     }
     select.addEventListener("click", function(){
@@ -103,10 +105,10 @@ function getHistory(data_, row){
     
     let data = JSON.parse(data_);
     //Start date, as time in ms
-    let refpoint = (new Date(((data[row]["data"]).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
+    let refpoint = (new Date(((data[row].data).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
     
     // Each "r", is a row from the data saved from climate table.
-    for(r of data[row]["data"]){
+    for(r of data[row].data){
         tempData.push(r.temp);
         humData.push(r.hum);
         //Time in relation to our refpoint, (/1000) convert to s from ms
