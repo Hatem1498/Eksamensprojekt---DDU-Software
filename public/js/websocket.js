@@ -8,7 +8,9 @@ ws.onopen = (ev) => {
     ws.send("site");
 
     if(document.URL.includes("Graphs.html")){
+        if(!history){
         ws.send("climate");
+        }
     }
 }
 
