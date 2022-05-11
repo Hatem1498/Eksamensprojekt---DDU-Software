@@ -4,7 +4,7 @@ let ctx = canvas.getContext("2d");
 let labels = [0, 1, 2, 3, 4, 5];
 console.log($(window).width());
 canvas.style.width = `${$(window).width()/2}px`;
-canvas.style.height = `${$(window).width()/3}px`;
+canvas.style.height = `${$(window).width()/2}px`;
 
 const data_info = {
     labels: labels,
