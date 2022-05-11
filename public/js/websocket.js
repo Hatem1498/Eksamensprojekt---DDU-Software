@@ -91,10 +91,10 @@ function getHistory(data, row){
     let humData = [];
     let time = [];
     //Start date, as time in ms
-    let refpoint = (new Date(((data.results[row].data).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
+    let refpoint = (new Date(((data[row].data).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
     console.log(refpoint);
     // Each "r", is a row from the data saved from cansat table.
-    for(r of data.results[row].data){
+    for(r of data[row].data){
         tempData.push(r.temp);
         humData.push(r.hum);
         //Time in relation to our refpoint, (/1000) convert to s from ms
