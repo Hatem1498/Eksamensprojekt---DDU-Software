@@ -19,7 +19,7 @@ if(document.URL.includes("Graphs.html")){
             ws.send("climate");
             }
         }, 60000);
-    }
+    
     select.addEventListener("click", function(){
         
         let options = select.querySelectorAll("option");
