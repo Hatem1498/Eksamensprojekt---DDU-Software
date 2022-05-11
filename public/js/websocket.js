@@ -59,7 +59,7 @@ ws.onmessage = (event) => {
     }
     else{
         let data = JSON.parse(event.data);
-        if(row.data != undefined){
+        if(data[0].data != undefined){
             HistoryOptions(data);
         }
         if(select.value != null || select.value != ""){
