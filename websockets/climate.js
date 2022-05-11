@@ -68,7 +68,7 @@ async function HandleRequest(ws, data){
 
     let i = ws_sensor.indexOf(ws);
     let j = ws_site.indexOf(ws);
-    if(i != -1 && data != "sensor"){
+    if(i != -1 && typeof data != "string"){
         let values = data.split(",");
         let temp = values[0];
         let hum = values[1];
@@ -78,9 +78,9 @@ async function HandleRequest(ws, data){
     }
 
     //Fetch data from climate tabel
-    if(j != -1 && data == "fetch"){
+    if(j != -1 && data == "climate" || data == "History"){
         console.log("fetching data...");
-        await fetchData("climate");
+        await fetchData(data);
         console.log("data fetched!");
         setTimeout(()=>{
             let result = m.results;

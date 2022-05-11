@@ -66,6 +66,9 @@ fetch: async function fetchData(tabel){
     if(tabel == "shelfs"){
         query = "SELECT * FROM shelfs";
     }
+    if(tabel == "History"){
+        query = "SELECT * FROM History";
+    }
         try{
             const client = await pool.connect();
 

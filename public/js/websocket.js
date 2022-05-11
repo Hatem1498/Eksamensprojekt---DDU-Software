@@ -1,19 +1,21 @@
 console.log("Connecting...");
 let HOST = location.origin.replace(/^http/, "ws");
 let ws = new ReconnectingWebSocket(HOST);
+let select = document.getElementById("select_data");
+let history = false;
 
 ws.onopen = (ev) => {
     ws.send("site");
 
     if(document.URL.includes("Graphs.html")){
-        ws.send("fetch");
+        ws.send("climate");
     }
     
 }
 
 if(document.URL.includes("Graphs.html")){
     setInterval(()=>{
-        ws.send("fetch");
+        ws.send("climate");
     }, 60000);
 }
 
@@ -48,14 +50,44 @@ ws.onclose = ()=>{
     console.log("Connection closed...Restarting");
     ws.reconnect();
     
-    //Previous solution, also the function solution
-    /* setTimeout(()=>{
-        location.reload();
-    }, 1000); */
 };
 
+select.addEventListener("change", )
 
+function HistoryOptions(data){
 
+    for(row of data.results){
+        let size = Object.keys(row.data).length;
+        let start = new Date((row.data.filter(obj=>{return obj.id == 1}))[0].date_time);
+        let end = new Date((row.data.filter(obj=>{return obj.id == row.data[size-1].id}))[0].date_time);
+        let clock = `${start.getHours()}:${start.getMinutes()}-${end.getHours()}:${end.getMinutes()}`
+        let date = `${start.getDate()}/${start.getMonth()+1}/${start.getFullYear()}`;
+        let opt = document.createElement("option");
+        opt.innerHTML = `${clock} , ${date}`;
+        opt.value = (row.id)-1;
+        select.appendChild(opt);
+    }
+
+}
+
+function getHistory(data, row){
+    let tempData = [];
+    let humData = [];
+    let time = [];
+    //Start date, as time in ms
+    let refpoint = (new Date(((data.results[row].data).filter(obj=>{return obj.id == 1}))[0].date_time)).getTime();
+    console.log(refpoint);
+    // Each "r", is a row from the data saved from cansat table.
+    for(r of data.results[row].data){
+        tempData.push(r.temp);
+        humData.push(r.hum);
+        //Time in relation to our refpoint, (/1000) convert to s from ms
+        let date_time = parseInt((((new Date(r.date_time)).getTime())-refpoint)/60000);
+        time.push(date_time);
+    }
+    updateChart(tempData, pressureData, time);
+    
+}
 
 
 
