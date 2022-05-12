@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>QR-scanning</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "../js/reconnecting-websocket/reconnecting-websocket-iife.min.js" defer></script>
+        <script src="../js/navbar.js" defer></script>
+        
+        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../css/QR-scan.css">
+        <script src ="../js/QR.js" defer></script>
+        <script type = "module" defer>
+            const loc = location.origin.replace(/^http/, "ws");
+            const HOST_2 = loc + "/data";
+            const ws_2 = new ReconnectingWebSocket(HOST_2);
+            import qrScanner from "../js/qr-scanner/qr-scanner.min.js";
+            function scan(element, button){
+                let engine = qrScanner.createQrEngine(qrScanner.WORKER_PATH);
+                qrScanner.scanImage(element, { returnDetailedScanResult: true, qrEngine: engine})
+                .then(function(result){  
+                    console.log(result);
+                    element.srcObject.getTracks().forEach(function(track){track.stop()});
+                    element.style.display = "none";
+                    button.className = "off";
+                    if(button.id == "QR-1"){
+                    if(window.confirm(`Decoded QR: ${result} \n Press "OK" to scan the shelf code`)){
+                        window.cheese = result;
+                        button_2.click();
+                    }
+                }
+                    else if(button.id == "QR-2"){
+                        if(window.confirm(`Decoded QR: ${result} \n Press "OK" to send data to the server`)){
+                            let data = `${result},${cheese}`;
+                            ws_2.send(data);
+                        }
+                    }
+                })
+                .catch(function(error){
+                console.log(error || 'No QR code found.');
+                if(button.className == "on"){
+                setTimeout(()=>{scan(element, button);}, 1000);
+                
+                }
+            });
+        }
+
+        scan(video, button);
+
+        //When "Scan Ost QR" button is pressed the button class changes to on, if it was off and video is displayed.
+        //If it was on, it is turned off. 
+        button.addEventListener("click", event => {
+        if(button.className == "off"){
+            button.className = "on";
+            video.style.display = "block";
+            navigator.mediaDevices.getUserMedia(constraints)
+            .then(function success(stream) {
+            video.srcObject = stream;
+            });
+            scan(video, button);
+        }
+        else{
+            button.className = "off";
+            video.style.display = "none";
+            video.srcObject.getTracks().forEach(function(track){
+                track.stop();
+            });
+        }
+        });
+        //When the second button is pressed "Scan hylde QR", if button was "Off", it is switched to "on" and the video is displayed.
+        //The reverse is true for when the button is "on", and is pressed.
+        button_2.addEventListener("click", event => {
+        if(button_2.className == "off"){
+            button_2.className = "on";
+            video_2.style.display = "block";
+            navigator.mediaDevices.getUserMedia(constraints)
+            .then(function success(stream) {
+            video_2.srcObject = stream;
+            });
+            scan(video_2, button_2);
+        }
+        else{
+            button_2.className = "off";
+            video_2.style.display = "none";
+            video_2.srcObject.getTracks().forEach(function(track){
+                track.stop();
+            });
+        }
+        });
+            
+        </script>
+        
+    </head>
+
+    <body>
+         
+        <div class = "temp">
+        
+        </div>
+
+        <nav class = "navbar" id = "nav">
+
+        </nav>
+
+        <button id = "QR-1" class = "on">Scan Ost QR</button>
+
+    <div class = "videoContainer" id = "a">
+        <video id = "video"></video>
+    </div>
+
+    <p id = "result"></p>
+
+    <button id = "QR-2" class = "off">Scan hylde QR</button>
+
+    <div class = "videoContainer" id = "b">
+        <video id = "video-2"></video>
+    </div>
+    </body>
+    
+
+</html>

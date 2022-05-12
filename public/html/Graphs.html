@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grafer</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+        <script src = "../js/reconnecting-websocket/reconnecting-websocket-iife.min.js" defer></script>
+        <script src="../js/navbar.js" defer></script>
+        
+        <link rel="stylesheet" href="../css/Graphs.css">
+        <link rel="stylesheet" href="../index.css">
+        
+        <script src="../js/Graphs.js" defer></script>
+        
+    </head>
+
+    <body>
+        
+        <div class = "temp">
+            
+        </div>
+
+        <nav class = "navbar" id = "nav">
+
+        </nav>
+
+        <canvas id="Graph" width="400" height="400"></canvas>
+        <button id="Live" onclick="Live()" class="Live">
+            <p>Live Data</p>
+        </button>
+        <p id = "text">Click to choose archived data:</p>
+        <select id = "select_data">
+
+        </select>
+        
+    </body>
+
+
+</html>

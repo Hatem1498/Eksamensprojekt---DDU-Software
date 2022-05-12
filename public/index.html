@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+
+        <!-- css -->
+        <link rel="stylesheet" href="../index.css">
+        <!-- javascript -->
+        
+        <script src="../js/websocket.js" defer></script>
+
+        
+        
+        
+
+        <title>Cheese warehouse</title>
+    </head>
+
+    <body>
+        <nav class = "navbar" id = "navbar">
+            <div class = "navbar_title">Cheese Factory</div>
+           
+            <div class = "burgermenu_btn">
+                <span class = "bar bar1"></span>
+                <span class = "bar bar2"></span>
+                <span class = "bar bar3"></span>
+            </div>
+            
+            <div class = "navbar_links">
+                <ul>
+                    <li><a href="/html/2D.html">2D - Lagehuset</a></li>
+                    <li><a href="/html/Graphs.html">Grafer</a></li>
+                    <li><a href="/html/Konfig.html">Konfigurationer</a></li>
+                    <li><a href="/html/QR-scan.html">QR-scanning</a></li>
+                    <li><a href="/html/Create-QR-cheese.html">Create Cheese QR</a></li>
+                    <li><a href="/html/Create-QR-shelf.html">Create Shelf QR</a></li>
+                </ul>
+            </div>
+        </nav>
+        <script defer>
+            const burgerBtn = document.getElementsByClassName('burgermenu_btn')[0]
+            const navbarLinks = document.getElementsByClassName('navbar_links')[0]
+            const bars = burgerBtn.querySelectorAll(".bar");
+            //Logic for navbar and burgermenu button
+            burgerBtn.addEventListener('click', () => {
+            navbarLinks.classList.toggle('transition');
+                setTimeout(()=>{
+                navbarLinks.classList.toggle('active');
+                burgerBtn.classList.toggle('active'); 
+                for(let x = 0; x < bars.length; x++){
+                bars[x].classList.toggle('x');
+                }
+                }, 200);
+            });
+            </script>
+    </body>
+</html>

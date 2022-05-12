@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Create QR-code</title>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src = "../js/reconnecting-websocket/reconnecting-websocket-iife.min.js" defer></script>
+        <script src="../js/navbar.js" defer></script>
+
+        
+        <link rel="stylesheet" href="../index.css">
+        <link rel="stylesheet" href="../css/Form.css">
+
+        <script src="../js/Create-QR.js" defer></script>
+        
+    </head>
+
+    <body>
+        
+        <div class = "temp">
+            
+        </div>
+
+        <nav class = "navbar" id = "nav">
+
+        </nav>
+
+        <form class = "CreateQR">
+
+            <div class = "input_container">
+                <label for="name">Shelf identifier:</label>
+                <input type = "text" id = "name" name = "name" required>
+            </div>
+
+            <div class = "input_container">
+                <label for="image_size">Size of QR-image (HeightxWidth) example: 320x640</label>
+                <input type="text" id="image_size" name="image_size">
+            </div>
+
+            <br><input type="submit" value="Generate QR-code">
+        </form>
+    </body>
+
+
+</html>

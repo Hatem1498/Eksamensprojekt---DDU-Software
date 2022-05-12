@@ -1,0 +1,100 @@
+.videoContainer{
+    max-height: fit-content;
+    width: 90%;
+    position: relative;
+    border: solid red 10px;
+    animation-duration: 3s;
+    animation-name: slidein;
+}
+
+
+.videoContainer#a{
+    top: 27px;
+}
+
+.videoContainer#b{
+    top: 50px;
+}
+
+video{
+    position: inherit;
+    width: 90%;
+    height: auto;
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+}
+
+/* #video-2.off{
+  display: none;
+}
+
+#video-2.on{
+    position: inherit;
+    width: 90%;
+    height: auto;
+    animation: fadeIn 2s;
+    -webkit-animation: fadeIn 2s;
+    -moz-animation: fadeIn 2s;
+    -o-animation: fadeIn 2s;
+    -ms-animation: fadeIn 2s;
+    display: block;
+} */
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-moz-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-webkit-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-o-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+  
+  @-ms-keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+  }
+
+#QR-1, #QR-2{
+    display:inline-block;
+    padding:0.35em 1.2em;
+    margin:0 0.3em 0.3em 0;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-weight:300;
+    text-align:center;
+    transition: all 0.2s;
+    position: relative;
+}
+
+button.on{
+    background-color: white;
+    color: black;
+    border: solid black 5px;
+}
+
+button.off{
+    color: white;
+    background-color: black;
+}
+
+#QR-1{
+    top: 20px;
+}
+
+#QR-2{
+    top: 30px;
+}
